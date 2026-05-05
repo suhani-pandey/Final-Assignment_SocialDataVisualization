@@ -290,6 +290,109 @@ canvas { max-width: 100%; }
 .caption-fig { font-weight: 700; color: var(--blue); margin-right: 4px; font-style: normal; }
 .chart-r { font-size: 0.82rem; color: var(--muted); text-align: right; margin-top: 6px; }
 .inline-stat { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; }
+
+/* ─── STORY WHY BOX ─── */
+.story-why {
+  background: var(--white); border-radius: var(--radius);
+  padding: 28px 32px; margin: 28px 0; box-shadow: var(--shadow);
+  border-left: 5px solid;
+}
+.story-why.blue  { border-color: var(--blue); }
+.story-why.gold  { border-color: var(--gold); }
+.story-why.green { border-color: var(--green); }
+.story-why.orange { border-color: var(--orange); }
+.story-why.purple { border-color: var(--purple); }
+.story-why.red   { border-color: var(--red); }
+.story-why-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  margin-bottom: 14px; display: block;
+}
+.story-why.blue .story-why-label   { color: var(--blue); }
+.story-why.gold .story-why-label   { color: #b87d0d; }
+.story-why.green .story-why-label  { color: var(--green); }
+.story-why.orange .story-why-label { color: var(--orange); }
+.story-why.purple .story-why-label { color: var(--purple); }
+.story-why.red .story-why-label    { color: var(--red); }
+.story-why p { font-size: 1rem; color: #333344; line-height: 1.85; margin-bottom: 12px; }
+.story-why p:last-child { margin-bottom: 0; }
+.story-why strong { color: var(--text); }
+
+/* ─── SECTION TAKEAWAY ─── */
+.takeaway {
+  background: var(--dark); color: #fff;
+  border-radius: var(--radius); padding: 36px 40px;
+  margin: 44px 0 0; position: relative; overflow: hidden;
+  border-left: 6px solid;
+}
+.takeaway.blue  { border-color: var(--blue); }
+.takeaway.gold  { border-color: var(--gold); }
+.takeaway.green { border-color: var(--green); }
+.takeaway.orange { border-color: var(--orange); }
+.takeaway.purple { border-color: var(--purple); }
+.takeaway.red   { border-color: var(--red); }
+.takeaway-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  margin-bottom: 14px; display: block; opacity: 0.55; color: #fff;
+}
+.takeaway-title {
+  font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+  color: #fff; margin-bottom: 14px; line-height: 1.3;
+}
+.takeaway p { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.85; margin-bottom: 10px; }
+.takeaway p:last-child { margin-bottom: 0; }
+
+/* ─── SURPRISING FINDING BLOCK (uniform) ─── */
+.finding-block {
+  margin: 56px 0 0; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); background: var(--white);
+}
+.finding-block-header { padding: 28px 32px 0; }
+.finding-number {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 8px; display: block;
+}
+.finding-block-title {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700;
+  line-height: 1.25; margin-bottom: 4px;
+}
+.finding-block-intro {
+  font-size: 1rem; color: var(--muted); line-height: 1.75;
+  padding: 12px 32px 24px; border-bottom: 1px solid var(--border);
+}
+.finding-block-chart { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+.finding-block-why { padding: 28px 32px; }
+.finding-block-why-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  margin-bottom: 14px; display: block;
+}
+.finding-block-why p { font-size: 0.98rem; color: #333344; line-height: 1.85; margin-bottom: 12px; }
+.finding-block-why p:last-child { margin-bottom: 0; }
+
+/* ─── FINAL CONCLUSION ─── */
+.final-conclusion { background: var(--dark); color: #fff; padding: 80px 24px; }
+.final-conclusion-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.final-conclusion h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff; font-weight: 700; margin-bottom: 16px; line-height: 1.2;
+}
+.final-conclusion .section-lead {
+  border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.65); text-align: left;
+}
+.conclusion-points {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; text-align: left;
+}
+@media (max-width: 700px) { .conclusion-points { grid-template-columns: 1fr; } }
+.conclusion-point {
+  background: rgba(255,255,255,0.06); border-radius: var(--radius);
+  padding: 24px; border-top: 3px solid;
+}
+.conclusion-point strong { color: #fff; display: block; font-size: 0.98rem; margin-bottom: 8px; }
+.conclusion-point p { font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin: 0; }
+.conclusion-closing {
+  font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.9; margin-top: 40px;
+  font-style: italic; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px;
+  text-align: center;
+}
 </style>
 </head>
 
@@ -307,6 +410,7 @@ canvas { max-width: 100%; }
     <li><a href="#trends">Trends</a></li>
     <li><a href="#surprising">Surprising</a></li>
     <li><a href="#future">2030</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
 
@@ -316,7 +420,7 @@ canvas { max-width: 100%; }
     <p class="hero-label">Social Data Analysis · DTU · Forbes 2023 + Historical 1996–2014</p>
     <h1 class="hero-title">Patterns of<br><em>Being Rich</em></h1>
     <p class="hero-sub">Who Becomes a Billionaire — and Why?</p>
-    <p class="hero-desc">An analysis of 2,640 billionaires across 76 countries using the Forbes 2023 list and historical data spanning 1996–2014. Five structural patterns. Three surprises. One forecast.</p>
+    <p class="hero-desc">We looked at 2,640 billionaires across 76 countries and asked: what do they actually have in common? The answers are not what most people expect. Scroll down and follow the story.</p>
     <div class="hero-stats">
       <div class="hero-stat-item">
         <span class="hero-stat-num" data-count="2640">0</span>
@@ -347,7 +451,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-blue">Pattern 1</p>
   <h2 class="section-title">Geography — Where Do<br>Billionaires Live?</h2>
-  <p class="section-lead">Does where you are born determine whether you can become a billionaire? The map below suggests yes — but the story of <em>per capita</em> density is more nuanced than absolute counts.</p>
+  <p class="section-lead">Does the country you're born in decide your chances of becoming a billionaire? The short answer is yes — more than almost any other factor. But the full picture is more interesting than just counting who has the most.</p>
 
   <!-- Interactive Choropleth Map -->
   <div class="chart-box reveal">
@@ -357,38 +461,25 @@ canvas { max-width: 100%; }
     <p class="caption"><span class="caption-fig">Fig. 1</span> <strong>What this shows:</strong> Each country is shaded by the combined net worth ($B) of all billionaires headquartered there. Darker green = more total wealth. <strong>How to read it:</strong> Hover over any country to see the exact billionaire count and total wealth. <strong>Key finding:</strong> The US dominates with $4,500B in total billionaire wealth — more than double China's $1,800B — reflecting both the size of its capital markets and the depth of its technology sector. Western Europe clusters at mid-range; most of the Global South has near-zero billionaire wealth.</p>
   </div>
 
-  <div class="grid-col-60-40 reveal">
-    <div>
-      <!-- Interactive Bubble Chart -->
-      <div class="chart-box">
-        <div class="chart-title">Fig. 2 · Interactive Bubble Chart — Hover for country details</div>
-        <div class="chart-subtitle">GDP vs Billionaire Count</div>
-        <div id="chart-bubble" class="plotly-chart" style="min-height:340px"></div>
-        <p class="caption"><span class="caption-fig">Fig. 2</span> <strong>What this shows:</strong> Each bubble is one country. X-axis = GDP ($ billions); Y-axis = number of billionaires; bubble size = total billionaire wealth. <strong>How to read it:</strong> Countries in the top-right corner are large economies with many billionaires. <strong>Colors:</strong> Bubble shade reflects wealth concentration. <strong>Key finding:</strong> The near-perfect correlation (r ≈ 0.98) confirms that economic output is the single strongest structural predictor of billionaire count — but outliers like India vs France reveal that institutional inequality can multiply or suppress this effect.</p>
-      </div>
-    </div>
-    <div>
-      <div class="why-box blue">
-        <div class="why-label">Why Geography Matters</div>
-        <p>The US dominates in absolute count (<strong>724 billionaires, 27% of the global total</strong>), followed by China (539). But raw count is misleading: the US has only 2.3 billionaires per million people.</p>
-        <ul>
-          <li><strong>Large economies generate more surplus capital</strong> — GDP is a precondition, not a guarantee.<sup><a href="#ref-4">[4]</a></sup></li>
-          <li><strong>Small wealthy nations are structurally efficient</strong> — Singapore's flat 17% tax and Switzerland's HQ ecosystem are deliberate policy advantages, not cultural accidents.<sup><a href="#ref-5">[5]</a></sup></li>
-          <li><strong>India vs France paradox</strong> — similar GDPs, yet India produces 7× more billionaires, reflecting internal inequality of opportunity.<sup><a href="#ref-5">[5]</a></sup></li>
-          <li><strong>Institutional quality moderates the relationship</strong> — stable rule of law, functioning capital markets, and low corruption are the real multipliers.<sup><a href="#ref-7">[7]</a></sup></li>
-        </ul>
-      </div>
-      <div class="stats-row" style="grid-template-columns:1fr 1fr; margin:16px 0 0;">
-        <div class="stat-card b">
-          <div class="stat-num c-blue">724</div>
-          <div class="stat-label">US Billionaires (27% global)</div>
-        </div>
-        <div class="stat-card g">
-          <div class="stat-num c-green">0.98</div>
-          <div class="stat-label">r: GDP → Billionaires</div>
-        </div>
-      </div>
-    </div>
+  <div class="chart-box reveal">
+    <div class="chart-title">Fig. 2 · Interactive Bubble Chart — Hover for country details</div>
+    <div class="chart-subtitle">GDP vs Billionaire Count</div>
+    <div id="chart-bubble" class="plotly-chart" style="min-height:340px"></div>
+    <p class="caption"><span class="caption-fig">Fig. 2</span> <strong>What this shows:</strong> Each bubble is one country. X-axis = GDP ($ billions); Y-axis = number of billionaires; bubble size = total billionaire wealth. <strong>How to read it:</strong> Countries in the top-right corner are large economies with many billionaires. <strong>Key finding:</strong> The near-perfect correlation (r ≈ 0.98) confirms that a bigger economy almost always means more billionaires — but outliers like India vs France show it's not the whole story.</p>
+  </div>
+
+  <div class="story-why blue reveal">
+    <span class="story-why-label">Why does one country have far more billionaires than another?</span>
+    <p>The simplest answer: <strong>bigger economy, more billionaires</strong>. The US has 724 billionaires — 27% of the entire world — because it has the biggest economy on the planet, the deepest stock markets, and the most mature tech industry. When a country generates more money overall, more of it ends up in fewer hands at the top.</p>
+    <p>But it's not just about being rich as a country. <strong>Look at India and France</strong> — they have roughly similar-sized economies, yet India produces 7 times more billionaires. Why? Because India has extreme inequality: a small group can capture enormous wealth while most people remain poor. France, with its stronger social safety net and wealth taxes, distributes money more evenly.</p>
+    <p><strong>Small countries can punch above their weight too.</strong> Singapore has only 6 million people but 26 billionaires, because its low 17% tax rate and status as a global financial hub make it a magnet for the wealthy. Switzerland works the same way — it's not just a rich country, it's a country designed to attract and keep wealth.</p>
+    <p>The real lesson: <strong>three things together</strong> — a large economy, fair legal systems, and low corruption — create the conditions where billionaires can appear. Take away any one of them, and the count drops sharply.<sup><a href="#ref-7">[7]</a></sup></p>
+  </div>
+
+  <div class="takeaway blue reveal">
+    <span class="takeaway-label">Pattern 1 — The Bottom Line</span>
+    <div class="takeaway-title">Where you live is one of the strongest predictors of whether you can become a billionaire.</div>
+    <p>Geography is not destiny, but it's close. The US, China, and a handful of small financial hubs produce the overwhelming majority of the world's billionaires — not because people there are smarter or work harder, but because those places have the economic infrastructure that turns hard work into extreme wealth. For most of the world, that infrastructure simply doesn't exist yet.</p>
   </div>
 </div>
 </div>
@@ -400,34 +491,43 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-gold">Pattern 2</p>
   <h2 class="section-title">Age — When Do People<br>Become Billionaires?</h2>
-  <p class="section-lead">Billionaire status is a slow accumulation, not a sudden event. The typical timeline from first business success to the Forbes list is 20–30 years.</p>
+  <p class="section-lead">We often imagine billionaires as young geniuses who struck gold overnight. The data tells a very different story. Most billionaires are old — and they got rich slowly.</p>
 
-  <div class="grid-col-40-60 reveal">
-    <div>
-      <div class="pull-stat">
-        <span class="num">65</span>
-        <span class="txt">median age of a billionaire<sup><a href="#ref-6">[6]</a></sup></span>
-      </div>
-      <div class="why-box gold mt-24">
-        <div class="why-label">Why Age Matters</div>
-        <ul>
-          <li><strong>Compounding takes decades</strong> — most fortunes are not made overnight. The 60–70 bracket dominates because capital compounds over 30–40 year careers.<sup><a href="#ref-4">[4]</a></sup></li>
-          <li><strong>Age ≠ richer</strong> — the correlation between age and net worth is near-zero (r ≈ 0.05). Older brackets are simply more populated; the ultra-wealthy appear in every age group.<sup><a href="#ref-4">[4]</a></sup></li>
-          <li><strong>The 80+ tail is wide</strong> — indicating both very wealthy individuals (long-compounding inherited wealth) and those who barely crossed the billion threshold.<sup><a href="#ref-4">[4]</a></sup></li>
-          <li><strong>Young billionaires are outliers</strong> — tech founders under 40 exist but are rare; they required both exceptional timing and existing social capital.<sup><a href="#ref-5">[5]</a></sup></li>
-        </ul>
-      </div>
+  <div class="chart-box reveal">
+    <div class="chart-title">Fig. 4 · Bar + Line Chart</div>
+    <div class="chart-subtitle">Billionaire Count & Median Wealth by Age Group (2023)</div>
+    <div style="position:relative; height:340px;">
+      <canvas id="chart-age"></canvas>
     </div>
-    <div>
-      <div class="chart-box">
-        <div class="chart-title">Fig. 4 · Bar + Line Chart</div>
-        <div class="chart-subtitle">Billionaire Count & Median Wealth by Age Group (2023)</div>
-        <div style="position:relative; height:340px;">
-          <canvas id="chart-age"></canvas>
-        </div>
-        <p class="caption"><span class="caption-fig">Fig. 4</span> <strong>What this shows:</strong> Blue bars (left axis) = number of billionaires in each age bracket. Gold line (right axis) = median net worth in $B for that group. <strong>How to read it:</strong> Taller bars mean more billionaires; a higher line point means wealthier individuals on average. <strong>Key finding:</strong> The 60–69 bracket is the single largest group (698 billionaires), confirming that wealth accumulation takes decades. Paradoxically, median wealth does not rise with age (r ≈ 0.05) — the ultra-wealthy appear across all brackets, not just the oldest.</p>
-      </div>
+    <p class="caption"><span class="caption-fig">Fig. 4</span> <strong>What this shows:</strong> Blue bars (left axis) = number of billionaires in each age bracket. Gold line (right axis) = median net worth in $B for that group. <strong>How to read it:</strong> Taller bars mean more billionaires in that age group; a higher point on the gold line means the typical person in that group is wealthier. <strong>Key finding:</strong> The 60–69 age group has the most billionaires (698 people). Being older does not automatically mean being richer — the gold line stays surprisingly flat across all ages.</p>
+  </div>
+
+  <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
+    <div class="stat-card gd">
+      <div class="stat-num c-gold">65</div>
+      <div class="stat-label">Median age of a billionaire</div>
     </div>
+    <div class="stat-card b">
+      <div class="stat-num c-blue">698</div>
+      <div class="stat-label">Billionaires aged 60–69 — the biggest group</div>
+    </div>
+    <div class="stat-card g">
+      <div class="stat-num c-green" style="font-size:1.5rem">r ≈ 0.05</div>
+      <div class="stat-label">Correlation between age and wealth — nearly zero</div>
+    </div>
+  </div>
+
+  <div class="story-why gold reveal">
+    <span class="story-why-label">Why are most billionaires old? And why are young billionaires so rare?</span>
+    <p>Think of wealth like a snowball rolling down a hill. <strong>The longer it rolls, the bigger it gets.</strong> Most billionaires didn't wake up rich one day — they spent 20 to 30 years slowly building a business, reinvesting profits, watching their company grow, and eventually reaching a point where the numbers added up to a billion. That process simply takes time. The typical billionaire is 65 years old for exactly this reason.</p>
+    <p>Young billionaires like Mark Zuckerberg or Kylie Jenner make headlines precisely <strong>because they're exceptions</strong>, not the rule. They had a rare combination of the right idea, the right timing, and often significant existing connections or resources. Of the 2,640 billionaires in 2023, fewer than 60 are under 40.</p>
+    <p>Here's the surprising twist though: <strong>being older doesn't make you richer.</strong> We might expect the oldest billionaires to be the wealthiest — more time to compound — but the data shows wealth is spread fairly evenly across age groups. A 45-year-old and an 80-year-old billionaire have roughly similar net worths on average. What age really shows is <em>how long you've been in the game</em>, not <em>how big the game got</em>.<sup><a href="#ref-4">[4]</a></sup></p>
+  </div>
+
+  <div class="takeaway gold reveal">
+    <span class="takeaway-label">Pattern 2 — The Bottom Line</span>
+    <div class="takeaway-title">Getting rich takes time. There is no shortcut to a billion dollars.</div>
+    <p>The average billionaire spent decades building their wealth before making the Forbes list. Young tech billionaires get all the media attention, but they represent less than 2% of the total. If there is one pattern that holds across countries, industries, and backgrounds, it's this: extreme wealth is almost always the result of patience and compounding over a very long time.</p>
   </div>
 </div>
 </div>
@@ -439,7 +539,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-green">Pattern 3</p>
   <h2 class="section-title">Life Expectancy — Does Living in<br>a Healthier Country Help?</h2>
-  <p class="section-lead">Life expectancy is not just about health — it is a composite signal of development quality: stable governance, functioning legal systems, low corruption, and reliable infrastructure.</p>
+  <p class="section-lead">Here's something unexpected: countries where people live longer tend to produce more billionaires per person. But it's not about health — it's about what living longer signals about a country's stability and fairness.</p>
 
   <div class="chart-box reveal">
     <div class="chart-title">Fig. 3 · Interactive Scatter Plot — Hover for country details</div>
@@ -448,26 +548,33 @@ canvas { max-width: 100%; }
     <p class="caption"><span class="caption-fig">Fig. 3</span> <strong>What this shows:</strong> Each dot is one country. X-axis = national life expectancy (years); Y-axis = billionaires per million residents (density). Dot size = absolute billionaire count. <strong>How to read it:</strong> Countries in the top-right have both long-living populations and high billionaire density. <strong>Key finding:</strong> The moderate correlation (r ≈ 0.40) means life expectancy is a useful but imperfect signal — it proxies institutional quality, not health alone. Notable outliers: Japan has the highest life expectancy globally yet low billionaire density; Singapore and Hong Kong sit far above the trend line due to favorable tax regimes.</p>
   </div>
 
-  <div class="grid-2 reveal mt-24">
-    <div class="why-box green">
-      <div class="why-label">Why Life Expectancy Matters</div>
-      <ul>
-        <li><strong>Proxy for institutional quality</strong> — countries where people live longer typically have stable governance, rule of law, low corruption, and reliable healthcare.<sup><a href="#ref-5">[5]</a></sup></li>
-        <li><strong>More years = more compounding</strong> — billionaires in high-life-expectancy countries can invest and grow wealth over longer active careers.<sup><a href="#ref-4">[4]</a></sup></li>
-        <li><strong>Notable outliers</strong> — Japan has the highest life expectancy globally but relatively few billionaires per capita, showing life expectancy alone is not sufficient.<sup><a href="#ref-7">[7]</a></sup></li>
-        <li><strong>Singapore and Hong Kong over-index</strong> — both combine high life expectancy with favorable tax regimes and global financial hub status.</li>
-      </ul>
+  <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
+    <div class="stat-card g">
+      <div class="stat-num c-green">r ≈ 0.40</div>
+      <div class="stat-label">Correlation: life expectancy → billionaire density</div>
     </div>
-    <div class="stats-row" style="grid-template-columns:1fr; margin:0;">
-      <div class="stat-card g">
-        <div class="stat-num c-green">r ≈ 0.40</div>
-        <div class="stat-label">Life Expectancy → Billionaire Density</div>
-      </div>
-      <div class="stat-card b" style="margin-top:16px">
-        <div class="stat-num c-blue" style="font-size:1.6rem">3–5×</div>
-        <div class="stat-label">More billionaires per capita in countries with life expectancy &gt;80</div>
-      </div>
+    <div class="stat-card b">
+      <div class="stat-num c-blue" style="font-size:1.6rem">3–5×</div>
+      <div class="stat-label">More billionaires per capita where life expectancy exceeds 80</div>
     </div>
+    <div class="stat-card gd">
+      <div class="stat-num c-gold" style="font-size:1.4rem">Japan</div>
+      <div class="stat-label">Highest life expectancy globally — yet very few billionaires per capita</div>
+    </div>
+  </div>
+
+  <div class="story-why green reveal">
+    <span class="story-why-label">Why do countries where people live longer tend to have more billionaires?</span>
+    <p>At first glance this sounds strange — what does how long people live have to do with billionaires? But life expectancy is really a <strong>shortcut measure for how well a country functions</strong>. Countries where people live long lives tend to also have stable governments, fair legal systems, low corruption, and reliable infrastructure. Those same things — not the long lives themselves — are what allow wealth to be built and kept.</p>
+    <p>Think about it this way: if you build a successful business in a country with weak rule of law, the government could seize it, a rival could steal it, or the economy could collapse. Your wealth is always at risk. In a country with strong institutions, <strong>your wealth is protected and can compound safely over decades.</strong></p>
+    <p>But life expectancy alone is not the full answer. <strong>Japan is the perfect example of why.</strong> Japan has the highest life expectancy in the world — people regularly live into their 90s — yet it has very few billionaires per million people. Japan also has high taxes, a culture that discourages extreme visible wealth, and a business environment that favours large corporations over individual founders. So the conditions for long life are there, but the conditions for billionaires are not.</p>
+    <p>The outliers at the top — <strong>Singapore and Hong Kong</strong> — combine long lives with something extra: extremely low taxes and a deliberate policy of attracting global wealth. That combination puts them far above the trend line.<sup><a href="#ref-7">[7]</a></sup></p>
+  </div>
+
+  <div class="takeaway green reveal">
+    <span class="takeaway-label">Pattern 3 — The Bottom Line</span>
+    <div class="takeaway-title">A country's life expectancy is really a measure of how safe and stable it is — and that stability is what billionaires need.</div>
+    <p>Countries where people live long, healthy lives also tend to be the places where wealth can be safely built and kept over generations. Life expectancy doesn't create billionaires directly — but it signals the kind of environment where extreme wealth becomes possible. The one clear exception is Japan, which proves that long lives alone aren't enough: you also need a system that rewards and protects individual wealth creation.</p>
   </div>
 </div>
 </div>
@@ -479,7 +586,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-orange">Pattern 4</p>
   <h2 class="section-title">Industry — Where Should<br>You Invest?</h2>
-  <p class="section-lead">Finance and Technology concentrate the most wealth per billionaire. But the relationship between industry size and individual wealth is inverted — more billionaires means lower median wealth.</p>
+  <p class="section-lead">If you could choose any field to build extreme wealth in, which would you pick? The data has a clear answer — and it also reveals a counterintuitive twist: the industries with the most billionaires are not always the ones that make each person the richest.</p>
 
   <div class="grid-2 reveal">
     <div class="chart-box">
@@ -521,14 +628,18 @@ canvas { max-width: 100%; }
     </div>
   </div>
 
-  <div class="why-box orange reveal">
-    <div class="why-label">Why Industry Matters</div>
-    <ul>
-      <li><strong>Finance leads on average wealth</strong> — fund managers control pools of capital where a 2% fee on $50B is far more wealth-generative than most product businesses.<sup><a href="#ref-4">[4]</a></sup></li>
-      <li><strong>Tech is growing fastest</strong> — software and platform businesses have near-zero marginal cost of scale. A single company can capture a global market.<sup><a href="#ref-4">[4]</a></sup></li>
-      <li><strong>Timing × sector interaction</strong> — companies founded post-1970 had access to computing-enabled compounding that was structurally impossible before.<sup><a href="#ref-4">[4]</a></sup></li>
-      <li><strong>Build beats buy</strong> — founding a company is both the most common and most lucrative path. Acquired companies are less wealth-generative because you pay fair market value upfront.<sup><a href="#ref-3">[3]</a></sup></li>
-    </ul>
+  <div class="story-why orange reveal">
+    <span class="story-why-label">Why do Finance and Tech produce the richest people? And why do more billionaires in a sector actually mean less wealth per person?</span>
+    <p><strong>Finance produces the richest billionaires on average because of how the money flows.</strong> A fund manager who looks after $50 billion in assets charges roughly 2% per year as a fee — that's $1 billion per year just for managing money, before any returns. The scale of capital in finance is simply unlike any other industry. You don't need to make a product, hire a factory, or ship anything. You just need to be trusted with other people's money.</p>
+    <p><strong>Technology is close behind, and growing fast, because of one special property: it costs almost nothing to serve one more customer.</strong> A software product built once can be sold to ten million people with almost no extra cost. That's why a company like Facebook or Google can become worth hundreds of billions — their product scales infinitely. No factory, shop, or restaurant can do that. This is why companies built after 1970 (when computers and the internet began) produce the wealthiest founders — they had access to a kind of scaling that simply didn't exist before.<sup><a href="#ref-4">[4]</a></sup></p>
+    <p>Here's the surprising flip side: <strong>the more billionaires an industry has, the lower the average wealth per person.</strong> Finance and Tech have many billionaires, but also many "merely" wealthy ones. Smaller industries with fewer total billionaires — like Metals &amp; Mining — can still produce very rich individuals because the wealth isn't spread as thin. More people sharing a pie means smaller slices, even if the pie itself is large.</p>
+    <p>Finally: <strong>building your own company beats buying or inheriting one.</strong> When you buy an existing business, you pay today's full price. When you build one from scratch, you capture all the growth from day one — which over 20–30 years becomes the difference between millions and billions.<sup><a href="#ref-3">[3]</a></sup></p>
+  </div>
+
+  <div class="takeaway orange reveal">
+    <span class="takeaway-label">Pattern 4 — The Bottom Line</span>
+    <div class="takeaway-title">If you want to become very rich, your choice of industry matters enormously — but so does timing.</div>
+    <p>Finance and Technology are the two clearest paths to extreme wealth because they both allow one person to control or capture value at a massive scale. But the data also shows that companies founded after 1970 produce far wealthier billionaires on average — the internet changed the rules. A brilliant business founded in 1950 simply couldn't grow the way a tech platform built in 1995 could. The lesson: the right industry at the right moment in history is one of the most powerful advantages a founder can have.</p>
   </div>
 </div>
 </div>
@@ -540,7 +651,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-purple">Pattern 5</p>
   <h2 class="section-title">Self-Made vs Inherited —<br>and the Gender Dimension</h2>
-  <p class="section-lead">Self-made billionaires are 70% of the count, but inherited wealth wins on median net worth. And the gender gap reveals structural barriers, not just ambition gaps.</p>
+  <p class="section-lead">Most billionaires built their own wealth — that's the good news. But the data also reveals a stubborn gender gap that doesn't come down to talent or effort. Something else is getting in the way.</p>
 
   <div class="stats-row reveal" style="grid-template-columns:repeat(4,1fr)">
     <div class="stat-card g">
@@ -580,15 +691,18 @@ canvas { max-width: 100%; }
     </div>
   </div>
 
-  <div class="why-box purple reveal">
-    <div class="why-label">Why the Gap Is So Large</div>
-    <ul>
-      <li><strong>Self-made dominates in count but inherited wins per person</strong> — inherited billionaires start with compounding capital already deployed, a structural head start no founder can replicate from zero.<sup><a href="#ref-4">[4]</a></sup></li>
-      <li><strong>Female founders receive far less VC funding</strong> — the high-value investor networks formed in male-dominated spaces create compounding disadvantages.<sup><a href="#ref-6">[6]</a></sup></li>
-      <li><strong>The founding window overlaps with caregiving</strong> — the 25–45 age window for starting companies still falls disproportionately on women in terms of unpaid caregiving burden.<sup><a href="#ref-5">[5]</a></sup></li>
-      <li><strong>Women primarily enter through inheritance</strong> — spousal and paternal inheritance dominate among female billionaires; independent wealth creation remains rare.<sup><a href="#ref-6">[6]</a></sup></li>
-      <li><strong>The gap is smallest in Tech and Media</strong> — these sectors are structurally more accessible, suggesting industry-specific barriers, not universal ones.<sup><a href="#ref-4">[4]</a></sup></li>
-    </ul>
+  <div class="story-why purple reveal">
+    <span class="story-why-label">Why do most billionaires build their own wealth? And why are there so few women?</span>
+    <p><strong>Most billionaires — 70% — built their own wealth from scratch.</strong> This might feel inspiring, and in some ways it is. But it also reflects a simple economic reality: starting a company early gives you the longest possible runway for your wealth to grow. A founder who starts with nothing and builds a business over 30 years captures every dollar of growth. Someone who buys an existing business pays the full price upfront and captures only future growth. The math strongly favours building over buying.</p>
+    <p>Here's the twist though: <strong>inherited billionaires are individually richer, on average.</strong> The typical person who inherited their wealth has $2.1 billion, compared to $1.5 billion for the typical self-made billionaire. Why? Because inherited wealth starts compounding from a very high base — often from a previous generation's already-enormous fortune. It's hard to outrun a billion-dollar head start, no matter how hard you work.<sup><a href="#ref-4">[4]</a></sup></p>
+    <p><strong>Now for the gender gap — and it's a big one.</strong> Only 11.6% of billionaires are women, and just 30% of female billionaires built their wealth themselves, compared to 75% of men. This is not because women are less capable or less ambitious. The data points to several practical barriers: women receive far less startup funding from investors (who are mostly men, investing in networks they know); the ages when people typically start companies — 25 to 45 — overlap heavily with the years when women disproportionately carry caregiving responsibilities at home; and most female billionaires entered the list through inheritance from a husband or father, not through independent wealth creation.<sup><a href="#ref-6">[6]</a></sup></p>
+    <p><strong>The good news is that the gap is closing, slowly.</strong> In Technology and Media, women's self-made rates are much closer to men's — suggesting these barriers are not permanent or universal, but something that can be changed with the right conditions.</p>
+  </div>
+
+  <div class="takeaway purple reveal">
+    <span class="takeaway-label">Pattern 5 — The Bottom Line</span>
+    <div class="takeaway-title">Building your own wealth works — but the game is not equally open to everyone.</div>
+    <p>The rise of self-made billionaires is a real trend and reflects genuine entrepreneurial energy across the world. But the gender data is a clear reminder that access to that path is not equal. Women face real, practical barriers — in funding, in timing, in the networks that capital flows through. The gap between 75% male self-made and 30% female self-made is not about ambition. It's about access.</p>
   </div>
 </div>
 </div>
@@ -600,7 +714,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-red">Trend Analysis</p>
   <h2 class="section-title">The Billionaire Landscape<br>1996 → 2023</h2>
-  <p class="section-lead">More billionaires, wealthier on average, and increasingly concentrated in technology and finance. Three structural forces are driving this shift.</p>
+  <p class="section-lead">The billionaire world of 2023 looks almost nothing like it did in 1996. It's bigger, more global, and dominated by technology in a way no one predicted 30 years ago. Here's how it changed — and why.</p>
 
   <div class="chart-box reveal">
     <div class="chart-title">Fig. 10 · Multi-Line Chart · Longitudinal Trends</div>
@@ -620,29 +734,33 @@ canvas { max-width: 100%; }
     <p class="caption"><span class="caption-fig">Fig. 11</span> <strong>What this shows:</strong> For each industry, three bars show the billionaire count at three points in time: 1996, 2014, and 2023. <strong>Colors:</strong> <span style="color:#4e79a7;font-weight:600">Dark blue</span> = 1996; <span style="color:#4caf82;font-weight:600">Green</span> = 2014; <span style="color:#f4c261;font-weight:600">Gold</span> = 2023. <strong>How to read it:</strong> Compare bar heights within each industry cluster to see which sectors grew fastest. <strong>Key findings:</strong> Technology exploded from 18 billionaires in 1996 to 391 in 2023 — the single biggest structural shift. Finance grew in absolute count (89 → 372) but its relative share of all billionaires declined. Manufacturing and Fashion remain large but grew more slowly, reflecting their physical-world scaling limits.</p>
   </div>
 
-  <div class="grid-2 reveal mt-24">
-    <div class="why-box red">
-      <div class="why-label">Why the Billionaire Count Keeps Growing</div>
-      <ul>
-        <li><strong>Asset price inflation compounds existing wealth</strong> — sustained equity and real estate returns since the 1990s mean anyone holding significant stakes sees passive net worth growth.<sup><a href="#ref-4">[4]</a></sup></li>
-        <li><strong>Technology enables winner-take-all markets</strong> — software has near-zero marginal cost. A single company can capture global markets that once required hundreds of regional businesses.<sup><a href="#ref-4">[4]</a></sup></li>
-        <li><strong>Globalisation opened new pipelines</strong> — rapid wealth creation in China, India, and emerging markets added hundreds of billionaires the Western-centric 1990s list never counted.<sup><a href="#ref-3">[3]</a></sup></li>
-      </ul>
+  <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
+    <div class="stat-card b">
+      <div class="stat-num c-blue">6×</div>
+      <div class="stat-label">Growth in billionaire count, 1996 → 2023</div>
     </div>
-    <div class="stats-row" style="grid-template-columns:1fr 1fr; margin:0">
-      <div class="stat-card b">
-        <div class="stat-num c-blue">6×</div>
-        <div class="stat-label">Growth in billionaire count 1996→2023</div>
-      </div>
-      <div class="stat-card g">
-        <div class="stat-num c-green">70%</div>
-        <div class="stat-label">Self-made rate — up from 63% in 1996</div>
-      </div>
-      <div class="stat-card r" style="margin-top:16px; grid-column:1/-1">
-        <div class="stat-num c-red">Tech</div>
-        <div class="stat-label">Became the single largest sector by 2023 — up from near-zero in 1996<sup><a href="#ref-3">[3]</a></sup></div>
-      </div>
+    <div class="stat-card g">
+      <div class="stat-num c-green">70%</div>
+      <div class="stat-label">Self-made rate in 2023, up from 63% in 1996</div>
     </div>
+    <div class="stat-card r">
+      <div class="stat-num c-red">Tech</div>
+      <div class="stat-label">The #1 sector by 2023 — barely existed on the list in 1996</div>
+    </div>
+  </div>
+
+  <div class="story-why red reveal">
+    <span class="story-why-label">Why has the number of billionaires grown so fast — and why does it keep going up?</span>
+    <p>In 1996, there were 423 billionaires in the world. By 2023, there were 2,640 — <strong>more than six times as many</strong> in less than 30 years. So what happened? Three things, happening at the same time.</p>
+    <p><strong>First, the stock market made existing rich people much richer.</strong> When stock prices and property values rise year after year — as they mostly have since the 1990s — anyone who already owns a lot of shares or real estate sees their wealth grow automatically, without doing anything new. Many people crossed the billion-dollar mark simply because the assets they already owned went up in value.<sup><a href="#ref-4">[4]</a></sup></p>
+    <p><strong>Second, the internet created a completely new kind of business</strong> — one that could reach billions of customers worldwide with almost no extra cost per user. One great app, built once, can run on a billion phones. This kind of scaling was simply impossible before computers. It's why Technology went from barely existing on the billionaire list in 1996 to being the single largest sector by 2023.</p>
+    <p><strong>Third, the world got bigger — at least economically.</strong> In 1996, the billionaire list was mostly American and European. By 2023, China had 539 billionaires and India had 169. As those economies grew rapidly, they created enormous amounts of new wealth — and some of it concentrated, as it always does, at the very top.<sup><a href="#ref-3">[3]</a></sup></p>
+  </div>
+
+  <div class="takeaway red reveal">
+    <span class="takeaway-label">Trend Analysis — The Bottom Line</span>
+    <div class="takeaway-title">The billionaire class didn't just grow — it was transformed by technology and globalisation.</div>
+    <p>The world of billionaires in 2023 looks almost nothing like 1996. It's larger, more global, more tech-driven, and slightly more self-made. The forces behind this growth — rising asset prices, internet-scale businesses, and emerging market economies — show no sign of slowing down. If anything, they are accelerating. The question isn't whether there will be more billionaires by 2030, but how many — and from where.</p>
   </div>
 </div>
 </div>
@@ -654,68 +772,80 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-gold">Surprising Findings</p>
   <h2 class="section-title">Three Things We Didn't Expect</h2>
-  <p class="section-lead">Data analysis is most powerful when it challenges assumptions. Here are three patterns that surprised us — and what they reveal about extreme wealth.</p>
+  <p class="section-lead">The most interesting part of any analysis is when the data tells you something you didn't see coming. Here are three patterns that genuinely surprised us — and what they say about how extreme wealth really works.</p>
 
-  <!-- 3.1 EDUCATION -->
-  <div class="chart-box reveal">
-    <div class="chart-title">Fig. 12 · Interactive Scatter Plot — Finding 1 · Hover for country details</div>
-    <div class="chart-subtitle">Does More Education Mean More Billionaires?</div>
-    <div id="chart-education" class="plotly-chart" style="min-height:380px"></div>
-    <p class="caption"><span class="caption-fig">Fig. 12</span> <strong>What this shows:</strong> Each circle is one country. X-axis = tertiary (university) education enrollment rate (%); Y-axis = billionaires per million population; circle size = absolute billionaire count. <strong>How to read it:</strong> Countries in the top-right combine high education enrollment with high billionaire density. Hover to see country name and values. <strong>Key finding:</strong> The correlation is moderate (r ≈ 0.4–0.5) but far from deterministic. Finland, South Korea, and Sweden have enrollment rates above 90% yet very few billionaires per capita — education builds broad human capital but billionaire creation also requires large addressable markets and deep capital markets. The famous "dropout" billionaires (Gates, Jobs, Zuckerberg) are extreme outliers who benefited from the educated ecosystems around them.</p>
+  <!-- FINDING 1 -->
+  <div class="finding-block reveal">
+    <div class="finding-block-header">
+      <span class="finding-number c-gold">Surprise #1</span>
+      <div class="finding-block-title">More education doesn't automatically mean more billionaires</div>
+    </div>
+    <p class="finding-block-intro">We assumed that countries with the most university graduates would produce the most billionaires. The data says: not quite.</p>
+    <div class="finding-block-chart">
+      <div class="chart-title">Fig. 12 · Interactive Scatter Plot — Hover for country details</div>
+      <div class="chart-subtitle">University Enrollment Rate vs Billionaires per Million People</div>
+      <div id="chart-education" class="plotly-chart" style="min-height:360px"></div>
+      <p class="caption"><span class="caption-fig">Fig. 12</span> <strong>What this shows:</strong> Each circle is one country. X-axis = share of young people enrolled in university (%); Y-axis = billionaires per million residents; circle size = total billionaire count. <strong>How to read it:</strong> A country in the top-right has both high education and many billionaires per person. Hover to see the country name. <strong>Key finding:</strong> There is a loose connection (r ≈ 0.4) but many highly-educated countries — Finland, South Korea, Sweden — have very few billionaires per capita. Education alone is not enough.</p>
+    </div>
+    <div class="finding-block-why">
+      <span class="finding-block-why-label c-gold">So what's actually going on?</span>
+      <p>Education helps — but it's not the deciding factor. <strong>Finland sends over 90% of its young people to university, yet has only a handful of billionaires.</strong> Meanwhile, the US, which has similar university rates, has 724. The difference isn't education — it's the size of the market, the depth of the financial system, and the culture around starting companies and taking risks.</p>
+      <p>Think of education like the soil in a garden. Good soil helps plants grow, but you also need seeds, water, and sunlight. A highly educated population gives a country the potential for billionaires — but without large markets, easy access to startup capital, and investor networks, that potential never fully develops.<sup><a href="#ref-7">[7]</a></sup></p>
+      <p>And what about the famous dropouts — Bill Gates, Steve Jobs, Mark Zuckerberg? <strong>They are the exception, not the rule.</strong> What's easy to miss is that they dropped out of Harvard and Stanford — the most elite educational environments in the world. They were surrounded by brilliant, ambitious people and had access to world-class resources. Dropping out of a top university is very different from never going at all. Their success came despite dropping out, not because of it.<sup><a href="#ref-5">[5]</a></sup></p>
+    </div>
   </div>
 
-  <div class="why-box gold reveal">
-    <div class="why-label">Finding 1 · The Education Paradox</div>
-    <ul>
-      <li><strong>Moderate correlation (r ≈ 0.4–0.5)</strong> — countries with higher tertiary enrollment tend to produce more billionaires, but the relationship is far from deterministic.<sup><a href="#ref-7">[7]</a></sup></li>
-      <li><strong>High education ≠ high billionaires</strong> — Finland, South Korea, and Iceland have &gt;80–90% enrollment but few billionaires. Education builds human capital broadly but billionaire creation also requires capital markets and large addressable markets.</li>
-      <li><strong>The famous dropouts are the outliers</strong> — Gates, Jobs, and Zuckerberg benefited <em>from</em> the educated ecosystems around them even as they left school. They are exceptions, not the rule.<sup><a href="#ref-5">[5]</a></sup></li>
-    </ul>
-  </div>
-
-  <!-- 3.2 LORENZ -->
-  <div class="grid-col-60-40 reveal mt-40">
-    <div class="chart-box">
-      <div class="chart-title">Fig. 13 · Lorenz Curve · Finding 2</div>
-      <div class="chart-subtitle">Inequality <em>Inside</em> the Billionaire Class</div>
-      <div style="position:relative; height:340px;">
+  <!-- FINDING 2 -->
+  <div class="finding-block reveal">
+    <div class="finding-block-header">
+      <span class="finding-number c-blue">Surprise #2</span>
+      <div class="finding-block-title">Even among billionaires, a tiny few own almost everything</div>
+    </div>
+    <p class="finding-block-intro">We knew billionaires were richer than most people. We didn't expect them to be so unequal among themselves.</p>
+    <div class="finding-block-chart">
+      <div class="chart-title">Fig. 13 · Lorenz Curve</div>
+      <div class="chart-subtitle">How Evenly Is Wealth Distributed Within the Billionaire Class?</div>
+      <div style="position:relative; height:320px;">
         <canvas id="chart-lorenz"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 13</span> <strong>What this shows:</strong> A Lorenz curve visualises wealth inequality within the billionaire class. X-axis = cumulative share of billionaires ranked poorest to richest (0–100%); Y-axis = cumulative share of total wealth they hold (0–100%). <strong>Lines:</strong> <span style="color:#4e79a7;font-weight:600">Blue curve</span> = actual billionaire wealth distribution; <span style="color:#ccc;font-weight:600">Grey diagonal</span> = perfect equality (everyone holds an equal share). <strong>How to read it:</strong> The further the blue curve bows below the diagonal, the more unequal the distribution. <strong>Key finding:</strong> The bottom 50% of billionaires hold only ~28% of total billionaire wealth. The top 10% hold ~50% — meaning there is extreme inequality even within a group already defined by extreme wealth.</p>
+      <p class="caption"><span class="caption-fig">Fig. 13</span> <strong>What this shows:</strong> The blue curve shows how wealth is distributed among billionaires, ranked from poorest to richest. The grey diagonal line would represent perfect equality — everyone has the same amount. <strong>How to read it:</strong> The further the blue curve drops below the grey line, the more unequal things are. If the curve hugged the diagonal, wealth would be spread evenly. <strong>Key finding:</strong> The bottom half of billionaires own only 28% of all billionaire wealth. The richest 10% of billionaires own roughly 50%.</p>
     </div>
-    <div>
-      <div class="why-box blue" style="border-color:var(--blue)">
-        <div class="why-label" style="color:var(--blue)">Finding 2 · Inequality Within Inequality</div>
-        <ul>
-          <li><strong>Top 10% of billionaires own ~50% of all billionaire wealth</strong> — even within a group already defined by extreme wealth, the distribution is highly skewed.<sup><a href="#ref-2">[2]</a></sup></li>
-          <li><strong>The Gini coefficient among billionaires is very high</strong> — the "average billionaire" is a statistical fiction. The median ($1.6B) is orders of magnitude below the top handful.<sup><a href="#ref-4">[4]</a></sup></li>
-          <li><strong>Platform effects explain the gap</strong> — Amazon, Tesla, and LVMH don't just grow, they dominate entire global sectors. Their founders' equity stakes compound on a base most billionaires never reach.</li>
-        </ul>
-      </div>
+    <div class="finding-block-why">
+      <span class="finding-block-why-label c-blue">So what's actually going on?</span>
+      <p>When we say "billionaire," we picture someone with unimaginable wealth. And that's true. But what the Lorenz curve shows is that <strong>even inside this already-extreme group, the gap between the "poorest" billionaire and the richest is staggering.</strong></p>
+      <p>The typical (median) billionaire is worth about $1.6 billion. That sounds enormous — and it is. But compare it to Elon Musk, Jeff Bezos, or Bernard Arnault, who are worth hundreds of billions. The difference is so large it almost doesn't fit in human intuition. <strong>The "average billionaire" is a statistical fiction</strong> — no one is really average. Most are clustered near the bottom of the scale, while a tiny handful sit so far above everyone else that they pull the average up dramatically.<sup><a href="#ref-4">[4]</a></sup></p>
+      <p>Why does this happen? Because the very top billionaires own companies that don't just compete in their market — <strong>they dominate it globally.</strong> Amazon, Tesla, LVMH, and Meta are each worth hundreds of billions of dollars. When you own a large share of something that size, ordinary billionaire wealth can't keep up. The gap between a $1.6B fortune and a $200B fortune is not a matter of working harder. It's a matter of owning the right company at the right scale at the right time.<sup><a href="#ref-2">[2]</a></sup></p>
     </div>
   </div>
 
-  <!-- 3.3 BIRTH MONTH -->
-  <div class="grid-col-40-60 reveal mt-40">
-    <div>
-      <div class="why-box green" style="border-color:var(--green)">
-        <div class="why-label" style="color:var(--green)">Finding 3 · The Billionaire Calendar Effect</div>
-        <ul>
-          <li><strong>January and October are above baseline</strong> — the distribution is statistically non-random (p &lt; 0.05).<sup><a href="#ref-2">[2]</a></sup></li>
-          <li><strong>Relative age effect</strong> — children born just after school cutoffs (often January) are slightly older, more mature, and more confident. Advantages compound across education and early career.</li>
-          <li><strong>Birth month does not affect wealth level</strong> — being born in January may increase the chance of <em>becoming</em> a billionaire, but not the <em>size</em> of the fortune.</li>
-          <li><strong>Gladwell's <em>Outliers</em> pattern</strong> — elite hockey, soccer, and now the billionaire class all show this relative age effect, hinting at how early advantage compounds over decades.</li>
-        </ul>
-      </div>
+  <!-- FINDING 3 -->
+  <div class="finding-block reveal">
+    <div class="finding-block-header">
+      <span class="finding-number c-green">Surprise #3</span>
+      <div class="finding-block-title">The month you were born in has a tiny but measurable effect</div>
     </div>
-    <div class="chart-box">
-      <div class="chart-title">Fig. 14 · Bar Chart · Finding 3</div>
-      <div class="chart-subtitle">Billionaires by Birth Month — Is It Random?</div>
-      <div style="position:relative; height:320px;">
+    <p class="finding-block-intro">This one sounds almost too strange to be true. But the numbers don't lie — and the explanation is surprisingly human.</p>
+    <div class="finding-block-chart">
+      <div class="chart-title">Fig. 14 · Bar Chart</div>
+      <div class="chart-subtitle">How Many Billionaires Were Born in Each Month?</div>
+      <div style="position:relative; height:300px;">
         <canvas id="chart-birthmonth"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 14</span> <strong>What this shows:</strong> Each bar = number of billionaires born in that calendar month. The dashed line = the expected count if birth months were perfectly uniform (total ÷ 12). <strong>Colors:</strong> <span style="color:#4caf82;font-weight:600">Green bars</span> above the dashed line = months with more billionaires than expected; bars below the line = fewer than expected. <strong>How to read it:</strong> Compare bar height to the dashed baseline. <strong>Key finding:</strong> January and October are notably above the baseline. A chi-square test confirms the distribution is non-random (p &lt; 0.05). This mirrors the "relative age effect" documented in elite sports — children born just after school enrollment cutoffs are slightly older and more confident, and early advantages compound over decades into career success.</p>
+      <p class="caption"><span class="caption-fig">Fig. 14</span> <strong>What this shows:</strong> Each bar = the number of billionaires born in that month. The dashed line = the number you'd expect if birth months had no effect at all (total ÷ 12 = roughly 220 per month). <strong>How to read it:</strong> Bars above the dashed line mean that month produced more billionaires than chance would predict. <strong>Key finding:</strong> January and October stand out above the baseline. A statistical test confirms this pattern is not random (p &lt; 0.05).</p>
     </div>
+    <div class="finding-block-why">
+      <span class="finding-block-why-label c-green">So what's actually going on?</span>
+      <p>This is called the <strong>relative age effect</strong>, and it has been found in many other places — elite sports, academic success, even CEO appointments. Here's the simple version: in most countries, children start school based on a cutoff date, often January 1st. <strong>A child born in January is almost a full year older than a child born in December in the same school year.</strong> At age 6 or 7, that age gap is significant — the older child seems smarter, more confident, and more capable.</p>
+      <p>Teachers notice. Coaches notice. Those children get more encouragement, more practice, more opportunities. Small advantages stack up over years. By the time those children become adults, the original age gap has long disappeared — but the confidence, the habits, and the head start remain.<sup><a href="#ref-2">[2]</a></sup></p>
+      <p>Author Malcolm Gladwell wrote about exactly this pattern in his book <em>Outliers</em>, focusing on elite hockey players. <strong>The billionaire data suggests the same effect reaches all the way to the top of the wealth ladder.</strong> Being born in January doesn't guarantee anything — but it gives you a slightly better chance of being spotted, encouraged, and set on a path that compounds over decades into something extraordinary.</p>
+      <p>One important nuance: <strong>being born in January doesn't make you richer once you become a billionaire</strong> — the sizes of January fortunes and December fortunes are similar. The effect is on the probability of getting there, not the destination.</p>
+    </div>
+  </div>
+
+  <div class="takeaway gold reveal" style="margin-top:48px">
+    <span class="takeaway-label">Surprising Findings — The Bottom Line</span>
+    <div class="takeaway-title">Becoming a billionaire is shaped by forces most people never think about.</div>
+    <p>Education, individual effort, and good ideas all matter — but so do the size of your country's financial markets, the luck of being born into the right era, and even something as random as your birth month. The data shows that extreme wealth is not purely a reward for individual talent. It is also a product of systems, timing, and compounding advantages that start very early in life and build invisibly over decades.</p>
   </div>
 </div>
 </div>
@@ -727,7 +857,7 @@ canvas { max-width: 100%; }
 <div class="section reveal">
   <p class="section-label c-blue">Future Predictions</p>
   <h2 class="section-title">Where Is the Billionaire Class<br>Heading by 2030?</h2>
-  <p class="section-lead">Using polynomial regression fitted on data from 1996–2023, we extrapolate three key trends. These are structural forecasts, not causal models — they assume current forces continue unchanged.</p>
+  <p class="section-lead">If the trends we've seen from 1996 to 2023 keep going, what will the billionaire world look like in 2030? We ran the numbers — here's what the data suggests, and how much we should actually trust these predictions.</p>
 
   <div class="forecast-row reveal">
     <div class="chart-box">
@@ -768,16 +898,64 @@ canvas { max-width: 100%; }
     </div>
   </div>
 
-  <div class="why-box blue reveal mt-24">
-    <div class="why-label">Interpretation</div>
-    <ul>
-      <li>These are trend extrapolations assuming current structural forces — tech growth, globalisation, asset inflation — continue at their current rate.<sup><a href="#ref-4">[4]</a></sup></li>
-      <li>Major disruptions (regulatory crackdowns on tech monopolies, financial crises, tax reform) could significantly alter the trajectory.<sup><a href="#ref-5">[5]</a></sup></li>
-      <li>The female share growing slowly (11.6% → ~13.7% over 7 years) highlights how structural barriers persist even as awareness grows.<sup><a href="#ref-6">[6]</a></sup></li>
-      <li>ML classifier: a Random Forest predicts self-made status with 68% accuracy. <strong>Industry is the strongest predictor</strong>, confirming that sectoral factors outweigh demographics.<sup><a href="#ref-2">[2]</a></sup></li>
-    </ul>
+  <div class="story-why blue reveal mt-24">
+    <span class="story-why-label">What do these predictions actually mean — and how much should we trust them?</span>
+    <p>These forecasts are based on the trends we've seen from 1996 to 2023. We used a mathematical method (polynomial regression) to extend those trends forward to 2030, and we calculated a <strong>confidence band</strong> — the shaded area on each chart — to show the range of plausible outcomes. Think of the dashed line as the most likely path, and the shaded zone as the "probably somewhere in here" zone.</p>
+    <p><strong>The count forecast (~3,400 by 2030) will likely be roughly right</strong> if the economy keeps growing, stock markets stay healthy, and no major global crisis interrupts things. A big recession, a major war, or sweeping new wealth taxes could push the real number lower. A new wave of AI-driven businesses could push it higher.</p>
+    <p><strong>The self-made rate (~72%) is the most stable forecast</strong> because it's been rising slowly and steadily for decades. It's unlikely to jump dramatically in either direction over just seven years.</p>
+    <p><strong>The female share (~13.7%) is the most troubling forecast.</strong> Even if everything goes well, women will still represent only about 1 in 7 billionaires by 2030. That's 19 years of very slow progress — from 5.2% in 1996 to a projected 13.7% in 2030. The barriers are real and they don't fix themselves quickly.</p>
+    <p>One more finding worth noting: we used a machine learning model to predict whether any given billionaire would be self-made or inherited, based on their industry, age, country, and gender. <strong>The model was right 68% of the time, and the single most important predictor was industry</strong> — not gender, not country, not age. What field you work in shapes your path to wealth more than almost anything else.<sup><a href="#ref-2">[2]</a></sup></p>
+  </div>
+
+  <div class="takeaway blue reveal">
+    <span class="takeaway-label">Future Predictions — The Bottom Line</span>
+    <div class="takeaway-title">The billionaire class will keep growing — but for women and most of the world, the pace of change remains frustratingly slow.</div>
+    <p>By 2030, there will likely be around 3,400 billionaires. More of them will have built their own wealth. More will come from China, India, and emerging markets. But women will still only be about 1 in 7, and the vast majority of countries will still produce no billionaires at all. Growth at the top is real — but it is not evenly shared.</p>
   </div>
 </div>
+</div>
+
+<!-- ══ FINAL CONCLUSION ══════════════════════════════════════ -->
+<div class="final-conclusion" id="conclusion">
+  <div class="final-conclusion-inner">
+    <p class="section-label c-gold" style="display:inline-block; margin-bottom:20px;">What We Learned</p>
+    <h2>So — What Does It Actually Take<br>to Become a Billionaire?</h2>
+    <p class="section-lead" style="margin:0 auto 0; max-width:680px; text-align:center; border:none; padding:0;">
+      After studying 2,640 billionaires across 76 countries and nearly 30 years of data, five clear patterns emerged. None of them are what most people expect.
+    </p>
+
+    <div class="conclusion-points">
+      <div class="conclusion-point" style="border-color:var(--blue)">
+        <strong>Where you're born matters more than almost anything else.</strong>
+        <p>The single biggest predictor of whether someone becomes a billionaire is their country. Not their intelligence, not their work ethic — their geography. Countries with large economies, stable laws, and deep financial markets produce nearly all the world's billionaires. Most of the planet simply doesn't have the infrastructure for extreme wealth creation yet.</p>
+      </div>
+      <div class="conclusion-point" style="border-color:var(--gold)">
+        <strong>It takes decades — and patience is not optional.</strong>
+        <p>The typical billionaire is 65 years old. They didn't get rich quickly. They spent 20 to 30 years building something, reinvesting, compounding, and waiting. The "overnight success" stories we see in the news are genuine outliers — rare exceptions that prove the rule rather than breaking it.</p>
+      </div>
+      <div class="conclusion-point" style="border-color:var(--orange)">
+        <strong>The industry you choose is your single biggest career decision.</strong>
+        <p>Finance and Technology produce the richest billionaires because they both allow one person to control enormous value at scale. Software built once can serve a billion users. A fund managing $50 billion earns fees no factory could match. Choosing to work in one of these fields — especially before they became dominant — is one of the most powerful advantages a founder can have.</p>
+      </div>
+      <div class="conclusion-point" style="border-color:var(--green)">
+        <strong>Building your own company works — but access to that path is unequal.</strong>
+        <p>70% of today's billionaires built their own wealth. That's a genuine shift over the past 30 years. But the gender data is a clear warning: only 30% of female billionaires are self-made, compared to 75% of men. The opportunity to build wealth is real — but it is not equally available to everyone, and the gap won't close on its own.</p>
+      </div>
+      <div class="conclusion-point" style="border-color:var(--purple)">
+        <strong>Extreme wealth compounds — and inequality compounds with it.</strong>
+        <p>Even within the billionaire class, a tiny few own almost everything. The top 10% of billionaires hold 50% of all billionaire wealth. Once you're at the very top, wealth grows by itself — stocks rise, assets appreciate, companies dominate global markets. The gap between a "regular" billionaire and the richest people alive is almost as hard to imagine as the gap between billionaires and the rest of us.</p>
+      </div>
+      <div class="conclusion-point" style="border-color:var(--red)">
+        <strong>The forces creating billionaires are accelerating, not slowing down.</strong>
+        <p>In 1996, there were 423 billionaires. By 2023, there were 2,640. By 2030, there will likely be around 3,400. Rising asset prices, internet-scale businesses, and rapid growth in China and India are all still running full speed. The world will have more billionaires in the future — the question is whether the benefits of that wealth creation will reach further down, or concentrate even further at the top.</p>
+      </div>
+    </div>
+
+    <p class="conclusion-closing">
+      Becoming a billionaire is not simply a matter of working hard or having a great idea. It is the result of geography, timing, industry, patience, and a series of compounding advantages — many of which begin long before anyone starts a company. Understanding those patterns doesn't make extreme wealth inevitable or fair. But it makes it legible. And that, ultimately, is what data is for.
+    </p>
+    <p style="color:rgba(255,255,255,0.25); font-size:0.8rem; margin-top:32px;">Analysis by Suhani, Nandini &amp; Nilanjana · Social Data Science &amp; Interaction, DTU 2023</p>
+  </div>
 </div>
 
 <!-- ══ REFERENCES ════════════════════════════════════════════ -->
