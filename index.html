@@ -115,17 +115,22 @@ sup a { color: #4e79a7; text-decoration: underline dotted; font-size: 0.75em; }
 .section-outer.dark { background: var(--dark); color: #fff; }
 
 .section-label {
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
-  margin-bottom: 12px; display: inline-block;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+  margin-bottom: 16px; display: inline-block;
+  background: rgba(0,0,0,0.05); padding: 4px 10px; border-radius: 4px;
 }
+.dark .section-label { background: rgba(255,255,255,0.08); }
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700; line-height: 1.2; margin-bottom: 16px;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: 20px;
+  letter-spacing: -0.01em;
 }
 .section-lead {
-  font-size: 1.1rem; color: var(--muted); max-width: 700px; line-height: 1.8; margin-bottom: 40px;
+  font-size: 1.2rem; color: var(--muted); max-width: 720px; line-height: 1.85; margin-bottom: 44px;
+  border-left: 3px solid var(--border); padding-left: 16px;
 }
+.dark .section-lead { border-color: rgba(255,255,255,0.12); }
 .dark .section-lead { color: rgba(255,255,255,0.55); }
 
 /* Pattern color coding */
@@ -155,10 +160,10 @@ sup a { color: #4e79a7; text-decoration: underline dotted; font-size: 0.75em; }
   background: var(--white); border-radius: var(--radius); padding: 24px;
   box-shadow: var(--shadow); margin: 28px 0; position: relative;
 }
-.chart-title { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-.chart-subtitle { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; }
+.chart-title { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.chart-subtitle { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
 .chart-wrap { position: relative; }
-.plotly-chart { width: 100%; min-height: 420px; }
+.plotly-chart { width: 100%; min-height: 380px; }
 canvas { max-width: 100%; }
 
 /* ─── GRID LAYOUTS ─── */
@@ -277,7 +282,12 @@ canvas { max-width: 100%; }
 .text-center { text-align: center; }
 .mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-40 { margin-top: 40px; }
 .mb-8 { margin-bottom: 8px; } .mb-16 { margin-bottom: 16px; }
-.caption { font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 10px; font-style: italic; }
+.caption {
+  font-size: 0.82rem; color: var(--muted); margin-top: 14px; font-style: normal;
+  border-top: 1px solid var(--border); padding-top: 12px; line-height: 1.65;
+}
+.caption strong { color: #444; font-style: normal; }
+.caption-fig { font-weight: 700; color: var(--blue); margin-right: 4px; font-style: normal; }
 .chart-r { font-size: 0.82rem; color: var(--muted); text-align: right; margin-top: 6px; }
 .inline-stat { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; }
 </style>
@@ -341,20 +351,20 @@ canvas { max-width: 100%; }
 
   <!-- Interactive Choropleth Map -->
   <div class="chart-box reveal">
-    <div class="chart-title">Interactive · Hover over a country</div>
+    <div class="chart-title">Fig. 1 · Interactive World Map — Hover over a country for details</div>
     <div class="chart-subtitle">Total Billionaire Wealth by Country (2023)</div>
     <div id="chart-choropleth" class="plotly-chart"></div>
-    <p class="caption">Color intensity reflects total combined net worth of all billionaires in that country (darker = wealthier).</p>
+    <p class="caption"><span class="caption-fig">Fig. 1</span> <strong>What this shows:</strong> Each country is shaded by the combined net worth ($B) of all billionaires headquartered there. Darker green = more total wealth. <strong>How to read it:</strong> Hover over any country to see the exact billionaire count and total wealth. <strong>Key finding:</strong> The US dominates with $4,500B in total billionaire wealth — more than double China's $1,800B — reflecting both the size of its capital markets and the depth of its technology sector. Western Europe clusters at mid-range; most of the Global South has near-zero billionaire wealth.</p>
   </div>
 
   <div class="grid-col-60-40 reveal">
     <div>
       <!-- Interactive Bubble Chart -->
       <div class="chart-box">
-        <div class="chart-title">Interactive · Hover for country details</div>
+        <div class="chart-title">Fig. 2 · Interactive Bubble Chart — Hover for country details</div>
         <div class="chart-subtitle">GDP vs Billionaire Count</div>
-        <div id="chart-bubble" class="plotly-chart" style="min-height:380px"></div>
-        <div class="chart-r">r ≈ 0.98 — among the strongest correlations in the dataset</div>
+        <div id="chart-bubble" class="plotly-chart" style="min-height:340px"></div>
+        <p class="caption"><span class="caption-fig">Fig. 2</span> <strong>What this shows:</strong> Each bubble is one country. X-axis = GDP ($ billions); Y-axis = number of billionaires; bubble size = total billionaire wealth. <strong>How to read it:</strong> Countries in the top-right corner are large economies with many billionaires. <strong>Colors:</strong> Bubble shade reflects wealth concentration. <strong>Key finding:</strong> The near-perfect correlation (r ≈ 0.98) confirms that economic output is the single strongest structural predictor of billionaire count — but outliers like India vs France reveal that institutional inequality can multiply or suppress this effect.</p>
       </div>
     </div>
     <div>
@@ -410,12 +420,12 @@ canvas { max-width: 100%; }
     </div>
     <div>
       <div class="chart-box">
-        <div class="chart-title">Static Chart · Age Distribution</div>
+        <div class="chart-title">Fig. 4 · Bar + Line Chart</div>
         <div class="chart-subtitle">Billionaire Count & Median Wealth by Age Group (2023)</div>
-        <div style="position:relative; height:380px;">
+        <div style="position:relative; height:340px;">
           <canvas id="chart-age"></canvas>
         </div>
-        <p class="caption">Bars show count; line shows median net worth ($ billions) per age group.</p>
+        <p class="caption"><span class="caption-fig">Fig. 4</span> <strong>What this shows:</strong> Blue bars (left axis) = number of billionaires in each age bracket. Gold line (right axis) = median net worth in $B for that group. <strong>How to read it:</strong> Taller bars mean more billionaires; a higher line point means wealthier individuals on average. <strong>Key finding:</strong> The 60–69 bracket is the single largest group (698 billionaires), confirming that wealth accumulation takes decades. Paradoxically, median wealth does not rise with age (r ≈ 0.05) — the ultra-wealthy appear across all brackets, not just the oldest.</p>
       </div>
     </div>
   </div>
@@ -432,10 +442,10 @@ canvas { max-width: 100%; }
   <p class="section-lead">Life expectancy is not just about health — it is a composite signal of development quality: stable governance, functioning legal systems, low corruption, and reliable infrastructure.</p>
 
   <div class="chart-box reveal">
-    <div class="chart-title">Interactive · Hover for country details</div>
+    <div class="chart-title">Fig. 3 · Interactive Scatter Plot — Hover for country details</div>
     <div class="chart-subtitle">Life Expectancy vs Billionaire Density (per million population)</div>
-    <div id="chart-lifeexp" class="plotly-chart" style="min-height:420px"></div>
-    <div class="chart-r">r ≈ 0.40 — moderate positive correlation<sup><a href="#ref-7">[7]</a></sup></div>
+    <div id="chart-lifeexp" class="plotly-chart" style="min-height:380px"></div>
+    <p class="caption"><span class="caption-fig">Fig. 3</span> <strong>What this shows:</strong> Each dot is one country. X-axis = national life expectancy (years); Y-axis = billionaires per million residents (density). Dot size = absolute billionaire count. <strong>How to read it:</strong> Countries in the top-right have both long-living populations and high billionaire density. <strong>Key finding:</strong> The moderate correlation (r ≈ 0.40) means life expectancy is a useful but imperfect signal — it proxies institutional quality, not health alone. Notable outliers: Japan has the highest life expectancy globally yet low billionaire density; Singapore and Hong Kong sit far above the trend line due to favorable tax regimes.</p>
   </div>
 
   <div class="grid-2 reveal mt-24">
@@ -473,29 +483,32 @@ canvas { max-width: 100%; }
 
   <div class="grid-2 reveal">
     <div class="chart-box">
-      <div class="chart-title">Static Chart</div>
+      <div class="chart-title">Fig. 5 · Horizontal Bar Chart</div>
       <div class="chart-subtitle">Average Wealth by Industry ($ Billions)</div>
-      <div style="position:relative; height:360px;">
+      <div style="position:relative; height:320px;">
         <canvas id="chart-industry-wealth"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 5</span> <strong>What this shows:</strong> Each horizontal bar represents one industry sector; bar length = average net worth ($B) of billionaires in that sector. Industries are ranked from highest to lowest average wealth. <strong>How to read it:</strong> Longer bar = wealthier average billionaire in that sector. <strong>Key finding:</strong> Finance & Investments leads ($8.2B avg) because fund managers control enormous capital pools. Technology is second ($6.8B) driven by platform economics. Fashion & Retail has the most billionaires by count, but lower average wealth — wealth is spread wider, not concentrated.</p>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Company Founding Era</div>
+      <div class="chart-title">Fig. 6 · Bar + Line Chart · Company Founding Era</div>
       <div class="chart-subtitle">When Was the Company Founded?</div>
-      <div style="position:relative; height:360px;">
+      <div style="position:relative; height:320px;">
         <canvas id="chart-era"></canvas>
       </div>
-      <p class="caption">Post-1970 companies produce wealthier billionaires — the computing/internet revolution had no incumbents.</p>
+      <p class="caption"><span class="caption-fig">Fig. 6</span> <strong>What this shows:</strong> Blue bars = number of today's billionaires whose wealth-generating company was founded in that era. Gold line = average net worth ($B) for billionaires from each era. <strong>How to read it:</strong> Bars show volume; line shows per-person wealth. <strong>Key finding:</strong> Post-1970 companies produce the wealthiest billionaires (avg $4.9–6.8B) because computing and the internet enabled zero-marginal-cost scaling that was structurally impossible in prior eras. Pre-1900 founders are rare survivors of long-compounding inherited empires.</p>
     </div>
   </div>
 
   <!-- HEATMAP -->
   <div class="chart-box reveal mt-24">
-    <div class="chart-title">Heatmap · Pearson Correlation Matrix</div>
+    <div class="chart-title">Fig. 7 · Heatmap · Pearson Correlation Matrix</div>
     <div class="chart-subtitle">Industry Characteristics — How Do They Relate?</div>
     <div class="heatmap-wrap">
       <div id="chart-heatmap" class="heatmap-grid"></div>
     </div>
+    <p class="caption"><span class="caption-fig">Fig. 7</span> <strong>What this shows:</strong> A 4×4 correlation matrix between industry-level variables: Billionaire Count, Median Wealth, Self-Made Rate, and Average Age. Each cell shows the Pearson r value. <strong>How to read it:</strong> <span style="color:#b22222;font-weight:600">Red</span> = strong positive correlation (both variables rise together); <span style="color:#2166ac;font-weight:600">Blue</span> = strong negative correlation (one rises as the other falls); White/near-white = weak or no relationship. Diagonal is always 1.0 (a variable correlated with itself). <strong>Key findings:</strong> Billionaire Count and Median Wealth are negatively correlated (r = −0.384) — larger industries spread wealth thinner. Avg Age and Median Wealth are positively correlated (r = 0.294) — older billionaires in capital-intensive sectors are wealthier from decades of compounding.</p>
+  </div>
     <div class="grid-2 mt-24">
       <div class="finding">
         <div class="finding-bullet" style="background:var(--orange)"></div>
@@ -550,18 +563,20 @@ canvas { max-width: 100%; }
 
   <div class="grid-2 reveal mt-24">
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Gender Gap by Sector</div>
+      <div class="chart-title">Fig. 8 · Grouped Bar Chart · Gender Gap by Sector</div>
       <div class="chart-subtitle">Self-Made Rate by Gender and Industry (%)</div>
-      <div style="position:relative; height:380px;">
+      <div style="position:relative; height:340px;">
         <canvas id="chart-gender-industry"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 8</span> <strong>What this shows:</strong> For each industry, two side-by-side bars show the percentage of billionaires who are self-made, split by gender. <strong>Colors:</strong> <span style="color:#4e79a7;font-weight:600">Blue</span> = male self-made rate; <span style="color:#e15759;font-weight:600">Red/pink</span> = female self-made rate. <strong>How to read it:</strong> Taller bar = higher share who built their own wealth (vs inherited). <strong>Key finding:</strong> Male self-made rates range 63–87% across sectors. Female rates are consistently 20–30 percentage points lower in most industries, except Technology and Media where the gap narrows — suggesting sector-specific structural barriers, not a universal trait.</p>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Wealth Path Comparison</div>
+      <div class="chart-title">Fig. 9 · Grouped Bar Chart · Wealth Path Comparison</div>
       <div class="chart-subtitle">Self-Made vs Inherited — Wealth Distribution</div>
-      <div style="position:relative; height:380px;">
+      <div style="position:relative; height:340px;">
         <canvas id="chart-selfmade-compare"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 9</span> <strong>What this shows:</strong> A side-by-side comparison of self-made vs inherited billionaires across three metrics: total count, median wealth ($B), and top-decile wealth ($B). <strong>Colors:</strong> <span style="color:#4caf82;font-weight:600">Green</span> = self-made; <span style="color:#9b59b6;font-weight:600">Purple</span> = inherited. <strong>How to read it:</strong> Compare bar heights within each metric group. <strong>Key finding:</strong> Self-made billionaires dominate by count (1,848 vs 792) but inherited billionaires are wealthier on average (median $2.1B vs $1.5B) and at the top ($12.3B vs $8.4B) — inheriting compound-grown capital gives a structural head start no founder can replicate from zero.</p>
     </div>
   </div>
 
@@ -588,20 +603,21 @@ canvas { max-width: 100%; }
   <p class="section-lead">More billionaires, wealthier on average, and increasingly concentrated in technology and finance. Three structural forces are driving this shift.</p>
 
   <div class="chart-box reveal">
-    <div class="chart-title">Static Chart · Longitudinal Trends</div>
+    <div class="chart-title">Fig. 10 · Multi-Line Chart · Longitudinal Trends</div>
     <div class="chart-subtitle">Billionaire Count, Self-Made Rate, Female Share & Median Wealth Over Time</div>
-    <div style="position:relative; height:380px;">
+    <div style="position:relative; height:360px;">
       <canvas id="chart-trends"></canvas>
     </div>
+    <p class="caption"><span class="caption-fig">Fig. 10</span> <strong>What this shows:</strong> Four trend lines plotted across four snapshots: 1996, 2001, 2014, and 2023. <strong>Lines:</strong> <span style="color:#4e79a7;font-weight:600">Blue</span> = total billionaire count (left axis); <span style="color:#4caf82;font-weight:600">Green</span> = self-made rate (%); <span style="color:#e15759;font-weight:600">Red</span> = female share (%); <span style="color:#f4c261;font-weight:600">Gold</span> = median wealth ($B). <strong>How to read it:</strong> Follow each line across the timeline to see direction and pace of change. <strong>Key findings:</strong> Total count grew 6× (423 → 2,640). Self-made rate rose from 63% to 70%. Female share grew slowly from 5.2% to 11.6% — significant progress, but still far from parity. Median wealth dipped slightly in 2023, suggesting wealth is spreading to a broader (less extreme) pool of billionaires.</p>
   </div>
 
   <div class="chart-box reveal">
-    <div class="chart-title">Static Chart · Industry Shift</div>
+    <div class="chart-title">Fig. 11 · Grouped Bar Chart · Industry Shift</div>
     <div class="chart-subtitle">Industry Billionaire Count: 1996 → 2014 → 2023</div>
-    <div style="position:relative; height:380px;">
+    <div style="position:relative; height:360px;">
       <canvas id="chart-industry-growth"></canvas>
     </div>
-    <p class="caption">Technology grew from near-zero to the largest single sector. Finance grew in absolute count but declined in relative share.</p>
+    <p class="caption"><span class="caption-fig">Fig. 11</span> <strong>What this shows:</strong> For each industry, three bars show the billionaire count at three points in time: 1996, 2014, and 2023. <strong>Colors:</strong> <span style="color:#4e79a7;font-weight:600">Dark blue</span> = 1996; <span style="color:#4caf82;font-weight:600">Green</span> = 2014; <span style="color:#f4c261;font-weight:600">Gold</span> = 2023. <strong>How to read it:</strong> Compare bar heights within each industry cluster to see which sectors grew fastest. <strong>Key findings:</strong> Technology exploded from 18 billionaires in 1996 to 391 in 2023 — the single biggest structural shift. Finance grew in absolute count (89 → 372) but its relative share of all billionaires declined. Manufacturing and Fashion remain large but grew more slowly, reflecting their physical-world scaling limits.</p>
   </div>
 
   <div class="grid-2 reveal mt-24">
@@ -642,10 +658,10 @@ canvas { max-width: 100%; }
 
   <!-- 3.1 EDUCATION -->
   <div class="chart-box reveal">
-    <div class="chart-title">Interactive · Hover for country details — Finding 1</div>
+    <div class="chart-title">Fig. 12 · Interactive Scatter Plot — Finding 1 · Hover for country details</div>
     <div class="chart-subtitle">Does More Education Mean More Billionaires?</div>
-    <div id="chart-education" class="plotly-chart" style="min-height:400px"></div>
-    <p class="caption">Tertiary education enrollment (%) vs billionaires per million population. Each circle = one country, sized by total billionaire count.</p>
+    <div id="chart-education" class="plotly-chart" style="min-height:380px"></div>
+    <p class="caption"><span class="caption-fig">Fig. 12</span> <strong>What this shows:</strong> Each circle is one country. X-axis = tertiary (university) education enrollment rate (%); Y-axis = billionaires per million population; circle size = absolute billionaire count. <strong>How to read it:</strong> Countries in the top-right combine high education enrollment with high billionaire density. Hover to see country name and values. <strong>Key finding:</strong> The correlation is moderate (r ≈ 0.4–0.5) but far from deterministic. Finland, South Korea, and Sweden have enrollment rates above 90% yet very few billionaires per capita — education builds broad human capital but billionaire creation also requires large addressable markets and deep capital markets. The famous "dropout" billionaires (Gates, Jobs, Zuckerberg) are extreme outliers who benefited from the educated ecosystems around them.</p>
   </div>
 
   <div class="why-box gold reveal">
@@ -660,12 +676,12 @@ canvas { max-width: 100%; }
   <!-- 3.2 LORENZ -->
   <div class="grid-col-60-40 reveal mt-40">
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Finding 2</div>
-      <div class="chart-subtitle">Inequality <em>Inside</em> the Billionaire Class — Lorenz Curve</div>
-      <div style="position:relative; height:380px;">
+      <div class="chart-title">Fig. 13 · Lorenz Curve · Finding 2</div>
+      <div class="chart-subtitle">Inequality <em>Inside</em> the Billionaire Class</div>
+      <div style="position:relative; height:340px;">
         <canvas id="chart-lorenz"></canvas>
       </div>
-      <p class="lorenz-note">If wealth were perfectly equal, the curve would follow the diagonal. The further it bows below, the more unequal the distribution.</p>
+      <p class="caption"><span class="caption-fig">Fig. 13</span> <strong>What this shows:</strong> A Lorenz curve visualises wealth inequality within the billionaire class. X-axis = cumulative share of billionaires ranked poorest to richest (0–100%); Y-axis = cumulative share of total wealth they hold (0–100%). <strong>Lines:</strong> <span style="color:#4e79a7;font-weight:600">Blue curve</span> = actual billionaire wealth distribution; <span style="color:#ccc;font-weight:600">Grey diagonal</span> = perfect equality (everyone holds an equal share). <strong>How to read it:</strong> The further the blue curve bows below the diagonal, the more unequal the distribution. <strong>Key finding:</strong> The bottom 50% of billionaires hold only ~28% of total billionaire wealth. The top 10% hold ~50% — meaning there is extreme inequality even within a group already defined by extreme wealth.</p>
     </div>
     <div>
       <div class="why-box blue" style="border-color:var(--blue)">
@@ -693,12 +709,12 @@ canvas { max-width: 100%; }
       </div>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Finding 3</div>
+      <div class="chart-title">Fig. 14 · Bar Chart · Finding 3</div>
       <div class="chart-subtitle">Billionaires by Birth Month — Is It Random?</div>
-      <div style="position:relative; height:340px;">
+      <div style="position:relative; height:320px;">
         <canvas id="chart-birthmonth"></canvas>
       </div>
-      <p class="caption">Dashed line = expected count if birth months were uniformly distributed. Chi-square test: p &lt; 0.05.</p>
+      <p class="caption"><span class="caption-fig">Fig. 14</span> <strong>What this shows:</strong> Each bar = number of billionaires born in that calendar month. The dashed line = the expected count if birth months were perfectly uniform (total ÷ 12). <strong>Colors:</strong> <span style="color:#4caf82;font-weight:600">Green bars</span> above the dashed line = months with more billionaires than expected; bars below the line = fewer than expected. <strong>How to read it:</strong> Compare bar height to the dashed baseline. <strong>Key finding:</strong> January and October are notably above the baseline. A chi-square test confirms the distribution is non-random (p &lt; 0.05). This mirrors the "relative age effect" documented in elite sports — children born just after school enrollment cutoffs are slightly older and more confident, and early advantages compound over decades into career success.</p>
     </div>
   </div>
 </div>
@@ -715,33 +731,36 @@ canvas { max-width: 100%; }
 
   <div class="forecast-row reveal">
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Polynomial Regression + 95% Bootstrap CI</div>
-      <div class="chart-subtitle">Total Billionaire Count</div>
-      <div style="position:relative; height:300px;">
+      <div class="chart-title">Fig. 15 · Forecast Line Chart</div>
+      <div class="chart-subtitle">Total Billionaire Count 1996–2030</div>
+      <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-count"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 15</span> <strong>Solid line</strong> = historical data (1996–2023). <strong>Dashed line</strong> = polynomial regression forecast (2024–2030). <strong>Shaded band</strong> = 95% bootstrap confidence interval (plausible range). <strong>Finding:</strong> ~3,400 billionaires predicted by 2030 if current growth forces continue.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-blue">~3,400</span>
         <div class="stat-label">Predicted billionaires by 2030</div>
       </div>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Polynomial Regression + 95% Bootstrap CI</div>
-      <div class="chart-subtitle">Self-Made Share (%)</div>
-      <div style="position:relative; height:300px;">
+      <div class="chart-title">Fig. 16 · Forecast Line Chart</div>
+      <div class="chart-subtitle">Self-Made Share (%) 1996–2030</div>
+      <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-selfmade"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 16</span> <strong>Solid line</strong> = historical self-made rate. <strong>Dashed line</strong> = forecast. <strong>Shaded band</strong> = 95% bootstrap CI. <strong>Finding:</strong> Self-made share is projected to rise slowly to ~72% — the trend is flattening, suggesting a structural ceiling as inherited-wealth dynasties persist.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-green">~72%</span>
         <div class="stat-label">Predicted self-made share by 2030</div>
       </div>
     </div>
     <div class="chart-box">
-      <div class="chart-title">Static Chart · Polynomial Regression + 95% Bootstrap CI</div>
-      <div class="chart-subtitle">Female Share (%)</div>
-      <div style="position:relative; height:300px;">
+      <div class="chart-title">Fig. 17 · Forecast Line Chart</div>
+      <div class="chart-subtitle">Female Share (%) 1996–2030</div>
+      <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-female"></canvas>
       </div>
+      <p class="caption"><span class="caption-fig">Fig. 17</span> <strong>Solid line</strong> = historical female share. <strong>Dashed line</strong> = forecast. <strong>Shaded band</strong> = 95% bootstrap CI. <strong>Finding:</strong> Female share is projected to reach only ~13.7% by 2030 — growing at roughly 0.3 percentage points per year, well short of any meaningful parity, reflecting persistent structural barriers in VC funding access and the founding-age caregiving overlap.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-red">~13.7%</span>
         <div class="stat-label">Predicted female share by 2030 — still far from parity</div>
