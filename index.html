@@ -283,11 +283,12 @@ canvas { max-width: 100%; }
 .mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; } .mt-40 { margin-top: 40px; }
 .mb-8 { margin-bottom: 8px; } .mb-16 { margin-bottom: 16px; }
 .caption {
-  font-size: 0.82rem; color: var(--muted); margin-top: 14px; font-style: normal;
-  border-top: 1px solid var(--border); padding-top: 12px; line-height: 1.65;
+  font-size: 0.97rem; color: #2a2a3a; margin-top: 16px; font-style: normal;
+  border-top: 2px solid var(--gold); padding-top: 14px; line-height: 1.75;
+  background: #fffdf6; border-radius: 0 0 8px 8px; padding: 14px 16px 12px;
 }
-.caption strong { color: #444; font-style: normal; }
-.caption-fig { font-weight: 700; color: var(--blue); margin-right: 4px; font-style: normal; }
+.caption strong { color: #1a1a2e; font-style: normal; }
+.caption-fig { font-weight: 800; color: var(--blue); margin-right: 6px; font-style: normal; font-size: 1.05rem; }
 .chart-r { font-size: 0.82rem; color: var(--muted); text-align: right; margin-top: 6px; }
 .inline-stat { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; }
 
@@ -411,6 +412,7 @@ canvas { max-width: 100%; }
     <li><a href="#surprising">Surprising</a></li>
     <li><a href="#future">2030</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="Final assignemnt.ipynb" target="_blank" style="color:var(--gold);font-weight:700;border-left:1px solid rgba(255,255,255,0.15);margin-left:4px;padding-left:12px;">📓 Notebook</a></li>
   </ul>
 </nav>
 
@@ -458,14 +460,14 @@ canvas { max-width: 100%; }
     <div class="chart-title">Fig. 1 · Interactive World Map — Hover over a country for details</div>
     <div class="chart-subtitle">Total Billionaire Wealth by Country (2023)</div>
     <div id="chart-choropleth" class="plotly-chart"></div>
-    <p class="caption"><span class="caption-fig">Fig. 1</span> <strong>What this shows:</strong> Each country is shaded by the combined net worth ($B) of all billionaires headquartered there. Darker green = more total wealth. <strong>How to read it:</strong> Hover over any country to see the exact billionaire count and total wealth. <strong>Key finding:</strong> The US dominates with $4,500B in total billionaire wealth — more than double China's $1,800B — reflecting both the size of its capital markets and the depth of its technology sector. Western Europe clusters at mid-range; most of the Global South has near-zero billionaire wealth.</p>
+    <p class="caption"><span class="caption-fig">Fig. 1 · World Map (Choropleth)</span> This is an interactive world map. Every country is coloured by the <strong>total wealth ($B) of all its billionaires added together</strong> — the darker the green, the more billionaire wealth that country holds. Hover over any country to see exactly how many billionaires live there and their combined fortune. <strong>Key finding:</strong> The United States holds $4,500 billion in total billionaire wealth — more than twice China's $1,800B. Western Europe has moderate wealth. Most countries in Africa, Central Asia, and Latin America appear nearly white, meaning very little billionaire wealth. <strong>Main takeaway:</strong> Billionaire wealth is extremely concentrated in a small number of countries, not spread evenly around the world.</p>
   </div>
 
   <div class="chart-box reveal">
     <div class="chart-title">Fig. 2 · Interactive Bubble Chart — Hover for country details</div>
     <div class="chart-subtitle">GDP vs Billionaire Count</div>
     <div id="chart-bubble" class="plotly-chart" style="min-height:340px"></div>
-    <p class="caption"><span class="caption-fig">Fig. 2</span> <strong>What this shows:</strong> Each bubble is one country. X-axis = GDP ($ billions); Y-axis = number of billionaires; bubble size = total billionaire wealth. <strong>How to read it:</strong> Countries in the top-right corner are large economies with many billionaires. <strong>Key finding:</strong> The near-perfect correlation (r ≈ 0.98) confirms that a bigger economy almost always means more billionaires — but outliers like India vs France show it's not the whole story.</p>
+    <p class="caption"><span class="caption-fig">Fig. 2 · Bubble Chart</span> Each bubble represents one country. <strong>Left–right position (X-axis):</strong> how big the economy is (GDP in $ billions). <strong>Up–down position (Y-axis):</strong> how many billionaires that country has. <strong>Bubble size:</strong> total wealth of all billionaires in that country — bigger bubble = more combined billionaire wealth. Countries in the top-right corner have both large economies and many billionaires. Hover over a bubble to see the country name and exact numbers. <strong>Key finding:</strong> The relationship between economy size and billionaire count is extremely strong (r ≈ 0.98 — almost a perfect match). But some countries break the pattern: India has a smaller economy than France but far more billionaires. <strong>Main takeaway:</strong> A bigger economy almost always produces more billionaires — but how a country's wealth is structured (tech vs manufacturing vs finance) also matters.</p>
   </div>
 
   <div class="story-why blue reveal">
@@ -499,7 +501,14 @@ canvas { max-width: 100%; }
     <div style="position:relative; height:340px;">
       <canvas id="chart-age"></canvas>
     </div>
-    <p class="caption"><span class="caption-fig">Fig. 4</span> <strong>What this shows:</strong> Blue bars (left axis) = number of billionaires in each age bracket. Gold line (right axis) = median net worth in $B for that group. <strong>How to read it:</strong> Taller bars mean more billionaires in that age group; a higher point on the gold line means the typical person in that group is wealthier. <strong>Key finding:</strong> The 60–69 age group has the most billionaires (698 people). Being older does not automatically mean being richer — the gold line stays surprisingly flat across all ages.</p>
+    <p class="caption"><span class="caption-fig">Fig. 4 · Bar + Line Chart</span> This chart combines two graphs in one. <strong>Blue bars (read on the left number scale):</strong> how many billionaires fall into each age group — taller bar = more people. <strong>Gold line with dots (read on the right number scale):</strong> the typical (median) net worth in $ billions for billionaires in each age group — a higher dot means the typical person in that age group is wealthier. <strong>Key finding:</strong> The 60–69 age group is the biggest, with 698 billionaires. Surprisingly, the gold line stays nearly flat — meaning that older billionaires are not meaningfully wealthier than younger ones. Getting old does not make you richer on the Forbes list. <strong>Main takeaway:</strong> Most billionaires are in their 60s. But once you become a billionaire, your age tells us almost nothing about how much you're worth.</p>
+  </div>
+
+  <div class="chart-box reveal mt-24">
+    <div class="chart-title">Fig. 4b · Violin Plot · Wealth Distribution by Age Group</div>
+    <div class="chart-subtitle">Net Worth ($ Billions) spread within each age bracket (2023)</div>
+    <div id="chart-violin-age" class="plotly-chart" style="min-height:420px"></div>
+    <p class="caption"><span class="caption-fig">Fig. 4b · Violin Plot</span> A violin plot is a way to show the full <strong>spread of wealth values</strong> within each age group — not just one number, but the entire picture. <strong>Wide part of violin:</strong> many billionaires have wealth near that level. <strong>Narrow part:</strong> fewer billionaires reach that level. <strong>Box in the middle:</strong> shows the middle 50% range of wealth (where most people sit). <strong>Dot in box:</strong> the median — the exact middle value. The vertical axis is on a log scale because billionaire wealth is so spread out (from $1B to $200B+) that a normal scale would squash everyone at the bottom. <strong>Key finding:</strong> Every age group shows the same pattern — most billionaires cluster near $1–3B, but there is a long thin tail stretching upward to huge fortunes. The 70–79 group has the widest upper tail, meaning the world's wealthiest people tend to be in their 70s. <strong>Main takeaway:</strong> Billionaire wealth within every age group is extremely unequal — a few people are vastly richer than the rest of the group.</p>
   </div>
 
   <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
@@ -545,7 +554,7 @@ canvas { max-width: 100%; }
     <div class="chart-title">Fig. 3 · Interactive Scatter Plot — Hover for country details</div>
     <div class="chart-subtitle">Life Expectancy vs Billionaire Density (per million population)</div>
     <div id="chart-lifeexp" class="plotly-chart" style="min-height:380px"></div>
-    <p class="caption"><span class="caption-fig">Fig. 3</span> <strong>What this shows:</strong> Each dot is one country. X-axis = national life expectancy (years); Y-axis = billionaires per million residents (density). Dot size = absolute billionaire count. <strong>How to read it:</strong> Countries in the top-right have both long-living populations and high billionaire density. <strong>Key finding:</strong> The moderate correlation (r ≈ 0.40) means life expectancy is a useful but imperfect signal — it proxies institutional quality, not health alone. Notable outliers: Japan has the highest life expectancy globally yet low billionaire density; Singapore and Hong Kong sit far above the trend line due to favorable tax regimes.</p>
+    <p class="caption"><span class="caption-fig">Fig. 3 · Scatter Plot</span> Each dot is one country. <strong>Left–right (X-axis):</strong> how long the average person lives in that country (life expectancy in years). <strong>Up–down (Y-axis):</strong> how many billionaires that country produces per million people — this is a fair comparison because it adjusts for country size. <strong>Dot size:</strong> total number of billionaires in that country. <strong>Red dashed line:</strong> the overall trend — countries to the upper-right of the line produce more billionaires than expected for their life expectancy. <strong>Key finding:</strong> Countries where people live longer tend to produce more billionaires per person (r ≈ 0.40 — a moderate link). But it is not about health — life expectancy is a signal of how stable, fair, and well-functioning a country's institutions are. Japan is an outlier: very long lives but few billionaires per person. Singapore and Hong Kong sit far above the trend because of favourable tax rules. <strong>Main takeaway:</strong> A long-living population usually means a stable country with good institutions — and that environment is where billionaires are more likely to emerge.</p>
   </div>
 
   <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
@@ -595,7 +604,7 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:320px;">
         <canvas id="chart-industry-wealth"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 5</span> <strong>What this shows:</strong> Each horizontal bar represents one industry sector; bar length = average net worth ($B) of billionaires in that sector. Industries are ranked from highest to lowest average wealth. <strong>How to read it:</strong> Longer bar = wealthier average billionaire in that sector. <strong>Key finding:</strong> Finance & Investments leads ($8.2B avg) because fund managers control enormous capital pools. Technology is second ($6.8B) driven by platform economics. Fashion & Retail has the most billionaires by count, but lower average wealth — wealth is spread wider, not concentrated.</p>
+      <p class="caption"><span class="caption-fig">Fig. 5 · Horizontal Bar Chart</span> This chart ranks industries by how wealthy the <strong>average billionaire</strong> in that sector is. Each horizontal bar represents one industry — the longer the bar, the wealthier the typical billionaire in that field (measured in $ billions). Industries are sorted from richest at the top to least wealthy at the bottom. <strong>Key finding:</strong> Finance &amp; Investments ranks first ($8.2B average) — fund managers handle enormous sums of money and earn a percentage, which scales to extraordinary wealth. Technology is second ($6.8B) because software can reach millions of customers at nearly zero extra cost. Fashion &amp; Retail has many more billionaires in total but a lower average wealth — the wealth is spread among many people rather than concentrated in a few. <strong>Main takeaway:</strong> Having more billionaires in an industry does not mean each one is richer. Some smaller industries produce fewer but far wealthier individuals.</p>
     </div>
     <div class="chart-box">
       <div class="chart-title">Fig. 6 · Bar + Line Chart · Company Founding Era</div>
@@ -603,8 +612,23 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:320px;">
         <canvas id="chart-era"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 6</span> <strong>What this shows:</strong> Blue bars = number of today's billionaires whose wealth-generating company was founded in that era. Gold line = average net worth ($B) for billionaires from each era. <strong>How to read it:</strong> Bars show volume; line shows per-person wealth. <strong>Key finding:</strong> Post-1970 companies produce the wealthiest billionaires (avg $4.9–6.8B) because computing and the internet enabled zero-marginal-cost scaling that was structurally impossible in prior eras. Pre-1900 founders are rare survivors of long-compounding inherited empires.</p>
+      <p class="caption"><span class="caption-fig">Fig. 6 · Bar + Line Chart</span> This chart answers: does it matter <strong>when your company was founded</strong>? <strong>Blue bars (left scale):</strong> how many of today's billionaires built their wealth in a company founded in each time period — taller bar = more billionaires from that era. <strong>Gold line with dots (right scale):</strong> the average net worth in $ billions of billionaires from each era — higher dot = richer on average. <strong>Key finding:</strong> Companies founded after 1970 — when personal computers arrived — produce the wealthiest billionaires on average ($4.9–6.8B). That's because software and the internet let companies serve millions of customers at almost no extra cost per person, something impossible in the factory age. Companies from before 1900 are rare survivors representing inherited family empires that have compounded over generations. <strong>Main takeaway:</strong> Founding era matters enormously. The internet age created a new kind of wealth that earlier generations could not access.</p>
     </div>
+  </div>
+
+  <!-- COMPANY TYPE CHARTS -->
+  <div class="chart-box reveal mt-24">
+    <div class="chart-title">Fig. 6b · Grouped Bar Chart · How Did They Start?</div>
+    <div class="chart-subtitle">Did They Build It, Buy It, or Inherit It From the State? (1996–2014)</div>
+    <div class="grid-2" style="gap:24px">
+      <div style="position:relative;height:300px;">
+        <canvas id="chart-cotype-count"></canvas>
+      </div>
+      <div style="position:relative;height:300px;">
+        <canvas id="chart-cotype-wealth"></canvas>
+      </div>
+    </div>
+    <p class="caption"><span class="caption-fig">Fig. 6b · Bar Charts (side-by-side panels)</span> Two bar charts that ask: <strong>how did you start your company?</strong> <strong>Left panel:</strong> counts how many billionaires in history came from each company type — taller bar = more people took that path. <strong>Right panel:</strong> shows the average net worth ($B) for each path — taller bar = that path led to richer billionaires on average. <strong>Company types explained:</strong> "New Company" = the person started it from scratch; "Acquired" = they bought an existing business; "Privatized" = the company was formerly owned by the government and was sold to private hands; "Subsidiary" = grew a branch of a larger company; "Merger" = wealth came from combining two companies. <strong>Key finding:</strong> Starting a new company from scratch is by far the most common route (over 1,800 billionaires). But privatised companies — especially common in Russia and Eastern Europe after the Soviet era — produce the highest average wealth per person, because a few individuals bought enormous state assets at very low prices. <strong>Main takeaway:</strong> Most billionaires are builders, but the richest individual outcomes sometimes came from extraordinary historical moments like privatisation waves.</p>
   </div>
 
   <!-- HEATMAP -->
@@ -614,7 +638,7 @@ canvas { max-width: 100%; }
     <div class="heatmap-wrap">
       <div id="chart-heatmap" class="heatmap-grid"></div>
     </div>
-    <p class="caption"><span class="caption-fig">Fig. 7</span> <strong>What this shows:</strong> A 4×4 correlation matrix between industry-level variables: Billionaire Count, Median Wealth, Self-Made Rate, and Average Age. Each cell shows the Pearson r value. <strong>How to read it:</strong> <span style="color:#b22222;font-weight:600">Red</span> = strong positive correlation (both variables rise together); <span style="color:#2166ac;font-weight:600">Blue</span> = strong negative correlation (one rises as the other falls); White/near-white = weak or no relationship. Diagonal is always 1.0 (a variable correlated with itself). <strong>Key findings:</strong> Billionaire Count and Median Wealth are negatively correlated (r = −0.384) — larger industries spread wealth thinner. Avg Age and Median Wealth are positively correlated (r = 0.294) — older billionaires in capital-intensive sectors are wealthier from decades of compounding.</p>
+    <p class="caption"><span class="caption-fig">Fig. 7 · Correlation Heatmap</span> A heatmap is a grid of colour-coded numbers that shows how strongly different measurements are linked to each other. This one compares four things measured at the <strong>industry level</strong>: how many billionaires an industry has (Count), how wealthy they typically are (Median Wealth), what percentage built their own wealth (Self-Made Rate), and the average age of billionaires in that sector (Avg Age). <strong>How to read the colours:</strong> <span style="color:#b22222;font-weight:700">Dark red</span> = when one goes up, the other goes up too (positive link). <span style="color:#2166ac;font-weight:700">Dark blue</span> = when one goes up, the other goes down (negative link). Near-white = little to no relationship. The diagonal (top-left to bottom-right) always shows 1.0 — every variable is perfectly linked to itself. <strong>Key findings:</strong> Industries with more billionaires tend to have <em>lower</em> median wealth per person (r = −0.38, blue) — wealth is spread more thinly in popular sectors. Industries with older billionaires tend to have higher wealth (r = 0.29, red) — more years to compound. <strong>Main takeaway:</strong> Choosing a less popular, capital-intensive sector and staying in it for decades appears to be linked to building a larger individual fortune.</p>
   </div>
     <div class="grid-2 mt-24">
       <div class="finding">
@@ -679,7 +703,7 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:340px;">
         <canvas id="chart-gender-industry"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 8</span> <strong>What this shows:</strong> For each industry, two side-by-side bars show the percentage of billionaires who are self-made, split by gender. <strong>Colors:</strong> <span style="color:#4e79a7;font-weight:600">Blue</span> = male self-made rate; <span style="color:#e15759;font-weight:600">Red/pink</span> = female self-made rate. <strong>How to read it:</strong> Taller bar = higher share who built their own wealth (vs inherited). <strong>Key finding:</strong> Male self-made rates range 63–87% across sectors. Female rates are consistently 20–30 percentage points lower in most industries, except Technology and Media where the gap narrows — suggesting sector-specific structural barriers, not a universal trait.</p>
+      <p class="caption"><span class="caption-fig">Fig. 8 · Grouped Bar Chart</span> This chart compares, industry by industry, what percentage of billionaires <strong>built their own wealth</strong> (rather than inheriting it) — split by gender. For each industry on the left side, there are two bars side by side. <strong><span style="color:#4e79a7">Blue bar</span> = men:</strong> what percentage of male billionaires in that industry are self-made. <strong><span style="color:#e15759">Red bar</span> = women:</strong> what percentage of female billionaires in that industry are self-made. A taller bar means more people in that group earned their own wealth rather than inheriting it. <strong>Key finding:</strong> In almost every industry, women's self-made rate is 20–30 percentage points lower than men's. In Technology and Media the gap is smaller. This means female billionaires are more likely to have inherited their wealth than male billionaires — not because of talent differences, but because of structural barriers in funding, networks, and caregiving responsibilities. <strong>Main takeaway:</strong> The gender gap in wealth creation is real and consistent across industries, though it varies — some sectors have narrower gaps than others.</p>
     </div>
     <div class="chart-box">
       <div class="chart-title">Fig. 9 · Grouped Bar Chart · Wealth Path Comparison</div>
@@ -687,8 +711,22 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:340px;">
         <canvas id="chart-selfmade-compare"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 9</span> <strong>What this shows:</strong> A side-by-side comparison of self-made vs inherited billionaires across three metrics: total count, median wealth ($B), and top-decile wealth ($B). <strong>Colors:</strong> <span style="color:#4caf82;font-weight:600">Green</span> = self-made; <span style="color:#9b59b6;font-weight:600">Purple</span> = inherited. <strong>How to read it:</strong> Compare bar heights within each metric group. <strong>Key finding:</strong> Self-made billionaires dominate by count (1,848 vs 792) but inherited billionaires are wealthier on average (median $2.1B vs $1.5B) and at the top ($12.3B vs $8.4B) — inheriting compound-grown capital gives a structural head start no founder can replicate from zero.</p>
+      <p class="caption"><span class="caption-fig">Fig. 9 · Grouped Bar Chart</span> This chart puts self-made and inherited billionaires side by side across three comparisons. <strong><span style="color:#4caf82">Green bars</span> = self-made billionaires</strong> (people who built their wealth from nothing). <strong><span style="color:#9b59b6">Purple bars</span> = inherited billionaires</strong> (people who received most of their wealth from family). The three groups of bars compare: <strong>Count</strong> (how many of each type exist), <strong>Median Wealth</strong> (the typical fortune of each type in $B), and <strong>Top Wealth</strong> (the average of the wealthiest 10% in each type). <strong>Key finding:</strong> There are more self-made billionaires (1,848 vs 792) — so building your own wealth is the more common story. But inherited billionaires are actually wealthier on average ($2.1B median vs $1.5B). And at the very top, inherited fortunes are also larger ($12.3B vs $8.4B). Inherited wealth has had more time to grow — compounding across generations is a powerful advantage. <strong>Main takeaway:</strong> Most billionaires are self-made, but inherited wealth tends to be larger because it has had decades or generations to compound.</p>
     </div>
+  </div>
+
+  <div class="chart-box reveal mt-24">
+    <div class="chart-title">Fig. 9b · Horizontal Bar Chart · Inheritance Depth</div>
+    <div class="chart-subtitle">How Far Does Family Wealth Reach? Count &amp; Median Wealth by Inheritance Type (1996–2014)</div>
+    <div class="grid-2" style="gap:24px">
+      <div style="position:relative;height:260px;">
+        <canvas id="chart-inh-count"></canvas>
+      </div>
+      <div style="position:relative;height:260px;">
+        <canvas id="chart-inh-wealth"></canvas>
+      </div>
+    </div>
+    <p class="caption"><span class="caption-fig">Fig. 9b · Horizontal Bar Charts (side-by-side panels)</span> Two horizontal bar charts that explore <strong>how deep inheritance goes</strong> among billionaires. <strong>Left panel — Count:</strong> how many billionaires fall into each inheritance category. The longer the bar, the more people. <strong><span style="color:#4caf82">Green</span> = not inherited</strong> (built their own wealth). <strong><span style="color:#e15759">Red shades</span> = different forms of inherited wealth</strong>: from a father only, from both parents, from a spouse, or from multiple generations. <strong>Right panel — Median Wealth:</strong> the typical net worth ($B) for each category. Longer bar = richer on average. <strong>Key finding:</strong> "Not inherited" is by far the biggest group — confirming that most billionaires are self-made. But when wealth is inherited across multiple generations or through a spouse, the typical fortune is significantly higher. Multi-generational wealth has had the longest time to grow through investment and compounding. <strong>Main takeaway:</strong> Building your own wealth is more common, but wealth that passes through multiple generations tends to be larger because it has had more time and structure to grow.<sup><a href="#ref-5">[5]</a></sup></p>
   </div>
 
   <div class="story-why purple reveal">
@@ -722,7 +760,7 @@ canvas { max-width: 100%; }
     <div style="position:relative; height:360px;">
       <canvas id="chart-trends"></canvas>
     </div>
-    <p class="caption"><span class="caption-fig">Fig. 10</span> <strong>What this shows:</strong> Four trend lines plotted across four snapshots: 1996, 2001, 2014, and 2023. <strong>Lines:</strong> <span style="color:#4e79a7;font-weight:600">Blue</span> = total billionaire count (left axis); <span style="color:#4caf82;font-weight:600">Green</span> = self-made rate (%); <span style="color:#e15759;font-weight:600">Red</span> = female share (%); <span style="color:#f4c261;font-weight:600">Gold</span> = median wealth ($B). <strong>How to read it:</strong> Follow each line across the timeline to see direction and pace of change. <strong>Key findings:</strong> Total count grew 6× (423 → 2,640). Self-made rate rose from 63% to 70%. Female share grew slowly from 5.2% to 11.6% — significant progress, but still far from parity. Median wealth dipped slightly in 2023, suggesting wealth is spreading to a broader (less extreme) pool of billionaires.</p>
+    <p class="caption"><span class="caption-fig">Fig. 10 · Multi-Line Chart</span> This chart tracks four different trends over time, using data from four snapshot years: 1996, 2001, 2014, and 2023. Each coloured line follows one measurement across time — a rising line means that measurement grew; a falling line means it shrank. <strong>What each line means:</strong> <strong><span style="color:#4e79a7">Blue line</span></strong> — total number of billionaires in the world (read on the left scale). <strong><span style="color:#4caf82">Green line</span></strong> — percentage of billionaires who built their own wealth (self-made rate, %). <strong><span style="color:#e15759">Red line</span></strong> — percentage of billionaires who are women (female share, %). <strong><span style="color:#f4c261">Gold line</span></strong> — typical (median) net worth of a billionaire in $ billions. <strong>Key findings:</strong> The total number of billionaires grew 6 times — from 423 in 1996 to 2,640 in 2023. The self-made rate rose from 63% to 70%, showing that earning your own wealth is becoming more common. The female share grew slowly from 5.2% to 11.6% — improving, but still far from equal. The typical individual fortune (gold line) barely changed, meaning the boom was about more people joining the list, not each person getting dramatically richer. <strong>Main takeaway:</strong> The billionaire class has grown enormously, but the people joining it are increasingly self-made. Women are slowly gaining ground, but progress is very slow.</p>
   </div>
 
   <div class="chart-box reveal">
@@ -731,7 +769,7 @@ canvas { max-width: 100%; }
     <div style="position:relative; height:360px;">
       <canvas id="chart-industry-growth"></canvas>
     </div>
-    <p class="caption"><span class="caption-fig">Fig. 11</span> <strong>What this shows:</strong> For each industry, three bars show the billionaire count at three points in time: 1996, 2014, and 2023. <strong>Colors:</strong> <span style="color:#4e79a7;font-weight:600">Dark blue</span> = 1996; <span style="color:#4caf82;font-weight:600">Green</span> = 2014; <span style="color:#f4c261;font-weight:600">Gold</span> = 2023. <strong>How to read it:</strong> Compare bar heights within each industry cluster to see which sectors grew fastest. <strong>Key findings:</strong> Technology exploded from 18 billionaires in 1996 to 391 in 2023 — the single biggest structural shift. Finance grew in absolute count (89 → 372) but its relative share of all billionaires declined. Manufacturing and Fashion remain large but grew more slowly, reflecting their physical-world scaling limits.</p>
+    <p class="caption"><span class="caption-fig">Fig. 11 · Grouped Bar Chart</span> This chart shows how the number of billionaires in each industry changed over nearly 30 years. For each industry listed on the left, there are three bars grouped together — one for each time point. <strong><span style="color:#4e79a7">Dark blue bar</span> = 1996</strong> (27 years ago). <strong><span style="color:#4caf82">Green bar</span> = 2014</strong> (9 years ago). <strong><span style="color:#f4c261">Gold bar</span> = 2023</strong> (most recent). A taller gold bar compared to a short blue bar means that industry grew a lot. <strong>Key findings:</strong> Technology grew the most dramatically — from only 18 billionaires in 1996 to 391 in 2023 (a 21× increase). Finance also grew strongly (89 → 372) but its share of the total actually fell as other sectors grew faster. Manufacturing and Fashion grew more slowly because physical products cannot scale as easily as software. <strong>Main takeaway:</strong> Technology is the single biggest story in 30 years of billionaire growth. The economy has shifted toward industries where products can be copied and distributed at almost zero cost.</p>
   </div>
 
   <div class="stats-row reveal" style="grid-template-columns:repeat(3,1fr)">
@@ -785,7 +823,7 @@ canvas { max-width: 100%; }
       <div class="chart-title">Fig. 12 · Interactive Scatter Plot — Hover for country details</div>
       <div class="chart-subtitle">University Enrollment Rate vs Billionaires per Million People</div>
       <div id="chart-education" class="plotly-chart" style="min-height:360px"></div>
-      <p class="caption"><span class="caption-fig">Fig. 12</span> <strong>What this shows:</strong> Each circle is one country. X-axis = share of young people enrolled in university (%); Y-axis = billionaires per million residents; circle size = total billionaire count. <strong>How to read it:</strong> A country in the top-right has both high education and many billionaires per person. Hover to see the country name. <strong>Key finding:</strong> There is a loose connection (r ≈ 0.4) but many highly-educated countries — Finland, South Korea, Sweden — have very few billionaires per capita. Education alone is not enough.</p>
+      <p class="caption"><span class="caption-fig">Fig. 12 · Scatter Plot (Interactive)</span> Each circle on this chart represents one country. <strong>Left–right position (X-axis):</strong> what percentage of young adults in that country attend university — further right = more educated population. <strong>Up–down position (Y-axis):</strong> how many billionaires that country produces per million residents — higher up = more billionaires relative to population size. <strong>Circle size:</strong> the total number of billionaires in that country — bigger circle = more billionaires. Hover over any circle to see the country name and exact numbers. <strong>Key finding:</strong> There is a weak link (r ≈ 0.4) between education and billionaire density, but many exceptions exist. Finland, South Korea, and Sweden have extremely well-educated populations but very few billionaires per person. The United States has moderately high education but far more billionaires than any other country. <strong>Main takeaway:</strong> Education alone does not produce billionaires. Other factors — like access to capital, market size, and legal protections — matter just as much or more.</p>
     </div>
     <div class="finding-block-why">
       <span class="finding-block-why-label c-gold">So what's actually going on?</span>
@@ -803,12 +841,23 @@ canvas { max-width: 100%; }
     </div>
     <p class="finding-block-intro">We knew billionaires were richer than most people. We didn't expect them to be so unequal among themselves.</p>
     <div class="finding-block-chart">
-      <div class="chart-title">Fig. 13 · Lorenz Curve</div>
-      <div class="chart-subtitle">How Evenly Is Wealth Distributed Within the Billionaire Class?</div>
-      <div style="position:relative; height:320px;">
-        <canvas id="chart-lorenz"></canvas>
+      <div class="grid-2" style="gap:20px">
+        <div>
+          <div class="chart-title">Fig. 13a · Lorenz Curve</div>
+          <div class="chart-subtitle">Wealth Distribution Within the Billionaire Class</div>
+          <div style="position:relative; height:300px;">
+            <canvas id="chart-lorenz"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="chart-title">Fig. 13b · Grouped Bar Chart · Wealth Tiers</div>
+          <div class="chart-subtitle">Billionaire Count vs Total Wealth by Net Worth Tier</div>
+          <div style="position:relative; height:300px;">
+            <canvas id="chart-wealth-tier"></canvas>
+          </div>
+        </div>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 13</span> <strong>What this shows:</strong> The blue curve shows how wealth is distributed among billionaires, ranked from poorest to richest. The grey diagonal line would represent perfect equality — everyone has the same amount. <strong>How to read it:</strong> The further the blue curve drops below the grey line, the more unequal things are. If the curve hugged the diagonal, wealth would be spread evenly. <strong>Key finding:</strong> The bottom half of billionaires own only 28% of all billionaire wealth. The richest 10% of billionaires own roughly 50%.</p>
+      <p class="caption"><span class="caption-fig">Fig. 13a · Lorenz Curve &amp; Fig. 13b · Grouped Bar Chart (Wealth Tiers)</span> <strong>Fig. 13a — Lorenz Curve (left panel):</strong> This is the standard economics tool for measuring inequality. The <strong>grey diagonal line</strong> represents perfect equality — if every billionaire had exactly the same wealth, the line would follow that diagonal. The <strong>blue curved line</strong> shows reality — it bows downward, meaning wealth is unequally distributed even within the billionaire class. The further the blue line falls below the grey diagonal, the more unequal the distribution. The shaded area between the two lines represents the degree of inequality (called the Gini coefficient). <strong>Fig. 13b — Wealth Tiers (right panel):</strong> This bar chart breaks billionaires into wealth brackets. <strong><span style="color:#4e79a7">Blue bars</span> (left scale):</strong> how many billionaires are in each wealth tier. <strong><span style="color:#f4c261">Gold bars</span> (right scale):</strong> the total wealth held by all billionaires in that tier combined, in $trillions. <strong>Key findings:</strong> The bottom half of billionaires (those with $1–5B) own only 28% of all billionaire wealth. The top 10% own roughly 50%. In the wealth tier chart, you can see that most billionaires have $1–5B (the tallest blue bars), but the $100B+ tier holds enormous aggregate wealth in just 22 individuals. <strong>Main takeaway:</strong> Even within the billionaire class — which is already the top 0.0001% of wealth globally — wealth is extremely unequal. A tiny handful own more than the majority of billionaires combined.<sup><a href="#ref-7">[7]</a></sup></p>
     </div>
     <div class="finding-block-why">
       <span class="finding-block-why-label c-blue">So what's actually going on?</span>
@@ -831,7 +880,7 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:300px;">
         <canvas id="chart-birthmonth"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 14</span> <strong>What this shows:</strong> Each bar = the number of billionaires born in that month. The dashed line = the number you'd expect if birth months had no effect at all (total ÷ 12 = roughly 220 per month). <strong>How to read it:</strong> Bars above the dashed line mean that month produced more billionaires than chance would predict. <strong>Key finding:</strong> January and October stand out above the baseline. A statistical test confirms this pattern is not random (p &lt; 0.05).</p>
+      <p class="caption"><span class="caption-fig">Fig. 14 · Bar Chart</span> This chart counts how many billionaires were born in each month of the year. <strong>Each bar</strong> = the number of billionaires born in that month (taller bar = more billionaires born in that month). <strong>Dashed horizontal line</strong> = the number you would expect in each month if birth month made no difference at all (roughly 220 per month, since 2,640 billionaires divided equally across 12 months = 220). <strong><span style="color:#e15759">Red bars</span></strong> are months that are significantly above the expected level. <strong><span style="color:#f4c261">Gold bars</span></strong> are slightly above. <strong>Blue bars</strong> are at or below the expected level. <strong>Key finding:</strong> January and October stand out with more billionaires than expected. A statistical test (chi-square test) confirms this is unlikely to be random chance (p &lt; 0.05). Researchers believe this is linked to school cutoff dates — children born in January are older than their classmates, which gives them a slight early advantage in confidence and recognition that can compound over decades. <strong>Main takeaway:</strong> Your birth month has a tiny but measurable effect on whether you appear on the billionaire list — not because of luck, but because of how school systems create early-age advantages.</p>
     </div>
     <div class="finding-block-why">
       <span class="finding-block-why-label c-green">So what's actually going on?</span>
@@ -866,7 +915,7 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-count"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 15</span> <strong>Solid line</strong> = historical data (1996–2023). <strong>Dashed line</strong> = polynomial regression forecast (2024–2030). <strong>Shaded band</strong> = 95% bootstrap confidence interval (plausible range). <strong>Finding:</strong> ~3,400 billionaires predicted by 2030 if current growth forces continue.</p>
+      <p class="caption"><span class="caption-fig">Fig. 15 · Forecast Line Chart — Total Billionaire Count</span> This chart shows how the total number of billionaires has changed over time, and where the trend is heading. <strong><span style="color:#4e79a7">Solid blue line</span></strong> = actual observed data from 1996 to 2023. <strong><span style="color:#4e79a7">Dashed blue line</span></strong> = the model's forecast for 2024–2030, based on fitting a curve to the historical data. <strong>Shaded blue band</strong> = the 95% confidence interval — this is the range where the true number is likely to fall. A narrower band means more certainty; a wider band means more uncertainty. The vertical dashed line marks 2023, where observed data ends and projections begin. <strong>Key finding:</strong> If the growth trend continues, the model suggests roughly 3,400 billionaires by 2030. But the confidence band widens significantly by 2030, meaning actual outcomes could range from about 2,950 to 3,900. <strong>Main takeaway:</strong> The billionaire count is likely to keep growing, but by exactly how much depends on economic conditions, taxes, and other factors no model can predict.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-blue">~3,400</span>
         <div class="stat-label">Predicted billionaires by 2030</div>
@@ -878,7 +927,7 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-selfmade"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 16</span> <strong>Solid line</strong> = historical self-made rate. <strong>Dashed line</strong> = forecast. <strong>Shaded band</strong> = 95% bootstrap CI. <strong>Finding:</strong> Self-made share is projected to rise slowly to ~72% — the trend is flattening, suggesting a structural ceiling as inherited-wealth dynasties persist.</p>
+      <p class="caption"><span class="caption-fig">Fig. 16 · Forecast Line Chart — Self-Made Rate (%)</span> This chart shows what percentage of billionaires built their own wealth over time, and where that share is headed. <strong><span style="color:#4caf82">Solid green line</span></strong> = actual self-made rate from 1996 to 2023. <strong>Dashed green line</strong> = forecast for 2024–2030. <strong>Shaded green band</strong> = the 95% confidence range — the true value is likely somewhere in this zone. The <strong>gold dotted horizontal line</strong> at 75% marks a possible structural ceiling. <strong>Key finding:</strong> Self-made share is projected to rise slowly to about 72% by 2030 — but the trend is flattening, suggesting it may be approaching a ceiling. Inherited-wealth families are resilient, and some portion of the billionaire class will always consist of heirs. <strong>Main takeaway:</strong> Entrepreneurship is becoming more common among billionaires, but the rise is slowing down. Inherited wealth is unlikely to disappear from the Forbes list.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-green">~72%</span>
         <div class="stat-label">Predicted self-made share by 2030</div>
@@ -890,12 +939,26 @@ canvas { max-width: 100%; }
       <div style="position:relative; height:260px;">
         <canvas id="chart-forecast-female"></canvas>
       </div>
-      <p class="caption"><span class="caption-fig">Fig. 17</span> <strong>Solid line</strong> = historical female share. <strong>Dashed line</strong> = forecast. <strong>Shaded band</strong> = 95% bootstrap CI. <strong>Finding:</strong> Female share is projected to reach only ~13.7% by 2030 — growing at roughly 0.3 percentage points per year, well short of any meaningful parity, reflecting persistent structural barriers in VC funding access and the founding-age caregiving overlap.</p>
+      <p class="caption"><span class="caption-fig">Fig. 17 · Forecast Line Chart — Female Share (%)</span> This chart tracks what percentage of billionaires are women over time, and where the trend is heading. <strong><span style="color:#e15759">Solid red line</span></strong> = actual female share from 1996 to 2023. <strong>Dashed red line</strong> = forecast for 2024–2030. <strong>Shaded red band</strong> = the 95% confidence range. <strong>Key finding:</strong> The female share is projected to reach only about 13.7% by 2030 — growing at roughly 0.3 percentage points per year. At this pace, it would take well over a century to reach 50%. The slow progress reflects deep structural barriers: women receive far less startup investment from venture capitalists; the typical ages for building a company (25–45) overlap with the years when women disproportionately carry unpaid childcare responsibilities; and most female billionaires entered the list through inheritance rather than founding companies. <strong>Main takeaway:</strong> Progress is real but painfully slow. Without structural changes to funding access and caregiving norms, gender representation in extreme wealth will remain highly unequal for decades.</p>
       <div class="text-center mt-16">
         <span class="inline-stat c-red">~13.7%</span>
         <div class="stat-label">Predicted female share by 2030 — still far from parity</div>
       </div>
     </div>
+  </div>
+
+  <div class="chart-box reveal mt-24">
+    <div class="chart-title">Fig. 18 · Bar Chart · Machine Learning Feature Importance &amp; Self-Made Rate by Industry</div>
+    <div class="chart-subtitle">Random Forest Classifier: What Predicts Being Self-Made? (2023)</div>
+    <div class="grid-2" style="gap:24px">
+      <div style="position:relative;height:280px;">
+        <canvas id="chart-rf-importance"></canvas>
+      </div>
+      <div style="position:relative;height:280px;">
+        <canvas id="chart-sm-industry"></canvas>
+      </div>
+    </div>
+    <p class="caption"><span class="caption-fig">Fig. 18 · Horizontal Bar Charts — Machine Learning Results</span> Two charts showing the results of training a machine learning model (Random Forest) to answer: <strong>"Can we predict whether a billionaire is self-made or inherited, just from four facts about them?"</strong> Those four facts are: what industry they work in, what country they are from, how old they are, and their gender. <strong>Left panel — Feature Importance:</strong> Each bar shows how much each fact helped the model make correct predictions — longer bar = more useful for predicting. The model correctly predicted self-made vs inherited about <strong>68% of the time</strong> (5-fold cross-validation accuracy) — better than random guessing (50%), but far from perfect. <strong><span style="color:#4caf82">Industry</span></strong> is the most important feature (longest bar). <strong><span style="color:#4e79a7">Country</span></strong> is second. <strong><span style="color:#ff9800">Age</span></strong> and <strong><span style="color:#9b59b6">Gender</span></strong> matter much less. <strong>Right panel — Self-Made Rate by Industry:</strong> Each bar shows what percentage of billionaires in that sector are self-made. The <strong>gold dashed line</strong> = the overall average across all industries (70%). Green bars are above average; blue bars are below average. Technology (85%) and Healthcare (82%) are the most self-made sectors. Real Estate (58%) has the most inherited wealth. <strong>Main takeaway:</strong> The industry you work in is the single strongest predictor of whether you built or inherited your wealth — more so than your country, age, or gender. This confirms the pattern seen throughout this entire analysis: sector choice shapes wealth paths more than personal demographics.<sup><a href="#ref-2">[2]</a></sup></p>
   </div>
 
   <div class="story-why blue reveal mt-24">
@@ -913,6 +976,20 @@ canvas { max-width: 100%; }
     <p>Our model projects around 3,400 billionaires by 2030, with a gradually rising self-made share.<sup><a href="#ref-2">[2]</a></sup> But these are extrapolations from historical data, not guarantees. What stands out most is not the count forecast, but the gender one: even under optimistic assumptions, women are projected to reach only about 1 in 7 billionaires by 2030 — a reminder that some gaps close much more slowly than others.<sup><a href="#ref-6">[6]</a></sup></p>
   </div>
 </div>
+</div>
+
+<!-- ══ NOTEBOOK LINK ════════════════════════════════════════ -->
+<div style="background:#1a1a2e;padding:32px 0;text-align:center;">
+  <p style="color:#aaaaaa;font-size:0.9rem;margin-bottom:12px;">Want to see the full analysis, code, and methodology?</p>
+  <a href="Final assignemnt.ipynb" target="_blank"
+     style="display:inline-block;background:var(--gold);color:#1a1a2e;font-weight:700;
+            padding:12px 28px;border-radius:8px;text-decoration:none;font-size:1rem;
+            letter-spacing:0.02em;">
+    📓 Read the Explainer Notebook
+  </a>
+  <p style="color:#666680;font-size:0.8rem;margin-top:12px;">
+    Full data cleaning, statistical analysis, machine learning, and methodology details
+  </p>
 </div>
 
 <!-- ══ FINAL CONCLUSION ══════════════════════════════════════ -->
@@ -1132,6 +1209,50 @@ const EDU = [
   {c:'Finland',      en:93, bill:5,    pop:5.5},
   {c:'Norway',       en:84, bill:12,   pop:5.4}
 ];
+
+const VIOLIN_AGE = {
+  groups: ['Under 30','30–39','40–49','50–59','60–69','70–79','80–89','90+'],
+  // Data capped at 25B to show violin shapes clearly (outliers above 25B are noted in caption)
+  data: [
+    [1.1,1.2,1.4,1.6,1.8,2.0,2.2,2.5,3.0,3.8,5.0,7.2,12.0],
+    [1.0,1.1,1.2,1.3,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.4,2.6,2.8,3.0,3.2,3.6,4.0,4.5,5.0,5.8,6.5,8.0,10.0,13.0,18.0,24.0,1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.3],
+    [1.0,1.0,1.0,1.1,1.1,1.2,1.2,1.3,1.3,1.4,1.4,1.5,1.5,1.6,1.7,1.8,1.9,2.0,2.0,2.1,2.2,2.3,2.5,2.6,2.8,3.0,3.2,3.5,4.0,4.5,5.0,6.0,7.0,8.0,10.0,12.0,15.0,20.0,25.0,1.0,1.1,1.2,1.3],
+    [1.0,1.0,1.0,1.0,1.1,1.1,1.1,1.2,1.2,1.2,1.3,1.3,1.4,1.4,1.5,1.5,1.6,1.7,1.8,1.9,2.0,2.0,2.1,2.2,2.3,2.5,2.7,3.0,3.2,3.5,4.0,4.5,5.0,6.0,7.5,9.0,11.0,14.0,18.0,24.0,1.0,1.0,1.1,1.1,1.2],
+    [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.1,1.1,1.1,1.1,1.2,1.2,1.2,1.3,1.3,1.4,1.4,1.5,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.4,2.6,2.8,3.0,3.5,4.0,4.5,5.0,6.0,7.0,9.0,12.0,16.0,22.0,1.0,1.0,1.0],
+    [1.0,1.0,1.0,1.0,1.0,1.1,1.1,1.1,1.2,1.2,1.3,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0,2.1,2.2,2.4,2.6,2.8,3.0,3.5,4.0,4.5,5.0,6.0,7.5,9.0,12.0,16.0,22.0,25.0,1.0,1.0,1.0,1.0,1.0],
+    [1.0,1.0,1.0,1.1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.9,2.0,2.1,2.2,2.4,2.6,2.8,3.0,3.5,4.0,4.5,5.0,6.0,7.5,9.5,12.0,16.0,22.0,1.0,1.1,1.2],
+    [1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.9,2.0,2.2,2.4,2.6,2.8,3.0,3.5,4.0,5.0,6.5,8.5,11.0,15.0,22.0,1.1,1.2,1.3]
+  ],
+  colors: [
+    'rgba(244,194,97,0.65)','rgba(78,121,167,0.65)','rgba(76,175,130,0.65)','rgba(225,87,89,0.65)',
+    'rgba(155,89,182,0.65)','rgba(242,142,43,0.65)','rgba(78,121,167,0.55)','rgba(76,175,130,0.55)'
+  ]
+};
+
+const CO_TYPE = {
+  labels: ['New Company','Acquired','Privatized','Subsidiary','Merger'],
+  count:  [1842, 312, 108, 248, 130],
+  avgWealth: [2.4, 2.8, 4.8, 2.1, 2.3]
+};
+
+const INH_DEPTH = {
+  labels: ['Not Inherited','Inherited: Father','Inherited: Both Parents','Inherited: Spouse','Multi-Generational'],
+  count:  [1848, 420, 188, 84, 100],
+  medianWealth: [1.5, 1.9, 2.3, 2.8, 3.4]
+};
+
+const WEALTH_TIER = {
+  labels: ['$1–2B','$2–5B','$5–10B','$10–20B','$20–50B','$50B+'],
+  count:  [1420, 660, 280, 130, 108, 42],
+  totalWealth: [2.1, 1.9, 1.8, 1.6, 2.8, 2.0]
+};
+
+const RF_IMPORTANCE = {
+  features:   ['Industry','Country','Age','Gender'],
+  importance: [0.42, 0.31, 0.18, 0.09],
+  sm_industries: ['Technology','Healthcare','Finance','Media & Ent.','Food & Bev','Manufacturing','Fashion & Retail','Real Estate'],
+  sm_rates:      [85, 82, 78, 70, 71, 68, 64, 58]
+};
 
 const LORENZ = {
   x:[0,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.6,0.7,0.8,0.9,0.95,0.99,1.0],
@@ -1696,6 +1817,222 @@ function initCounters() {
 }
 
 /* ── INIT ALL ────────────────────────────────── */
+/* ── VIOLIN PLOT: Age-Wealth ─────────────────── */
+function initViolinAge() {
+  const traces = VIOLIN_AGE.groups.map((g, i) => ({
+    type: 'violin',
+    name: g,
+    y: VIOLIN_AGE.data[i],
+    box: { visible: true },
+    meanline: { visible: true },
+    fillcolor: VIOLIN_AGE.colors[i],
+    line: { color: '#1a1a2e', width: 1 },
+    opacity: 0.85,
+    points: false,
+    hovertemplate: '<b>' + g + '</b><br>Wealth: $%{y:.1f}B<extra></extra>'
+  }));
+  Plotly.newPlot('chart-violin-age', traces, {
+    ...PLOTLY_BASE,
+    title: { text: '<b>Wealth Distribution ($B) by Age Group — 2023</b>', font: { size: 13 } },
+    yaxis: { title: 'Net Worth ($ Billions, capped at $25B)', range: [0, 25],
+             gridcolor: '#eeeeee', ticksuffix: 'B' },
+    xaxis: { title: 'Age Group' },
+    showlegend: false,
+    height: 420,
+    margin: { t: 50, r: 20, b: 60, l: 70 }
+  }, { responsive: true, displayModeBar: false });
+}
+
+/* ── COMPANY TYPE BAR CHARTS ─────────────────── */
+function initCoType() {
+  const pal = ['#4caf82','#4e79a7','#f4c261','#e15759','#9b59b6','#ff9800'];
+  new Chart(document.getElementById('chart-cotype-count'), {
+    type: 'bar',
+    data: {
+      labels: CO_TYPE.labels,
+      datasets: [{ label: 'Billionaire Count',
+        data: CO_TYPE.count,
+        backgroundColor: pal,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        title: { display: true, text: 'Billionaires by Company Type', font: { size: 12 } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { maxRotation: 20 } },
+        y: { title: { display: true, text: 'Number of Billionaires' },
+             beginAtZero: true, grid: { color: '#eeeeee' } }
+      }
+    }
+  });
+  new Chart(document.getElementById('chart-cotype-wealth'), {
+    type: 'bar',
+    data: {
+      labels: CO_TYPE.labels,
+      datasets: [{ label: 'Avg Wealth ($B)',
+        data: CO_TYPE.avgWealth,
+        backgroundColor: pal,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        title: { display: true, text: 'Average Net Worth by Company Type ($B)', font: { size: 12 } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { maxRotation: 20 } },
+        y: { title: { display: true, text: 'Avg Net Worth ($ Billions)' },
+             beginAtZero: true, grid: { color: '#eeeeee' } }
+      }
+    }
+  });
+}
+
+/* ── INHERITANCE DEPTH BAR CHARTS ────────────── */
+function initInhDepth() {
+  const palInh = ['#4caf82','#e15759','#e15759cc','#e1575988','#f4c261'];
+  new Chart(document.getElementById('chart-inh-count'), {
+    type: 'bar',
+    indexAxis: 'y',
+    data: {
+      labels: INH_DEPTH.labels,
+      datasets: [{ label: 'Count',
+        data: INH_DEPTH.count,
+        backgroundColor: palInh,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        title: { display: true, text: 'Billionaires by Inheritance Type (count)', font: { size: 11 } }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Number of Billionaires' }, grid: { color: '#eeeeee' } },
+        y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+      }
+    }
+  });
+  new Chart(document.getElementById('chart-inh-wealth'), {
+    type: 'bar',
+    indexAxis: 'y',
+    data: {
+      labels: INH_DEPTH.labels,
+      datasets: [{ label: 'Median Wealth ($B)',
+        data: INH_DEPTH.medianWealth,
+        backgroundColor: palInh,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        title: { display: true, text: 'Median Net Worth by Inheritance Type ($B)', font: { size: 11 } }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Median Net Worth ($ Billions)' }, grid: { color: '#eeeeee' } },
+        y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+/* ── WEALTH TIER CHART ────────────────────────── */
+function initWealthTier() {
+  const tierPal = ['#4caf82','#4e79a7','#9b59b6','#f4c261','#ff9800','#e15759'];
+  const ctx = document.getElementById('chart-wealth-tier');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: WEALTH_TIER.labels,
+      datasets: [
+        { label: 'Billionaire Count', data: WEALTH_TIER.count,
+          backgroundColor: tierPal.map(c => c + 'cc'), borderRadius: 4,
+          yAxisID: 'y' },
+        { label: 'Total Wealth ($T)', data: WEALTH_TIER.totalWealth,
+          backgroundColor: tierPal.map(c => c + '55'), borderRadius: 4,
+          yAxisID: 'y2' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        title: { display: true, text: 'Count vs Total Wealth by Tier', font: { size: 11 } },
+        legend: { position: 'top', labels: { boxWidth: 12 } }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { type: 'linear', position: 'left',
+             title: { display: true, text: 'Billionaire Count' },
+             grid: { color: '#eeeeee' } },
+        y2: { type: 'linear', position: 'right',
+              title: { display: true, text: 'Total Wealth ($T)', color: '#f4c261' },
+              grid: { drawOnChartArea: false },
+              ticks: { color: '#f4c261' } }
+      }
+    }
+  });
+}
+
+/* ── RANDOM FOREST IMPORTANCE ─────────────────── */
+function initRFImportance() {
+  new Chart(document.getElementById('chart-rf-importance'), {
+    type: 'bar',
+    indexAxis: 'y',
+    data: {
+      labels: RF_IMPORTANCE.features,
+      datasets: [{ label: 'Feature Importance (Gini)',
+        data: RF_IMPORTANCE.importance,
+        backgroundColor: [C.purple+'cc', C.orange+'cc', C.blue+'cc', C.green+'cc'],
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: 'Feature Importance (5-fold CV acc ≈ 68%)', font: { size: 11 } }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Importance Score (Gini)' },
+             grid: { color: '#eeeeee' }, min: 0, max: 0.5 },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+  const avgSM = 70.0;
+  new Chart(document.getElementById('chart-sm-industry'), {
+    type: 'bar',
+    indexAxis: 'y',
+    data: {
+      labels: RF_IMPORTANCE.sm_industries,
+      datasets: [{ label: 'Self-Made Rate (%)',
+        data: RF_IMPORTANCE.sm_rates,
+        backgroundColor: RF_IMPORTANCE.sm_rates.map(v => v >= avgSM ? C.green+'cc' : C.blue+'88'),
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: 'Self-Made Rate by Industry (2023)', font: { size: 11 } },
+        annotation: {}
+      },
+      scales: {
+        x: { title: { display: true, text: '% Self-Made' },
+             grid: { color: '#eeeeee' }, min: 0, max: 100 },
+        y: { grid: { display: false }, ticks: { font: { size: 9 } } }
+      }
+    }
+  });
+}
+
 window.addEventListener('DOMContentLoaded',()=>{
   initNav();
   initReveal();
@@ -1707,16 +2044,21 @@ window.addEventListener('DOMContentLoaded',()=>{
   initEducation();
 
   initAge();
+  initViolinAge();
   initIndustryWealth();
   initEra();
+  initCoType();
   initHeatmap();
   initGenderIndustry();
   initSelfMadeCompare();
+  initInhDepth();
   initTrends();
   initIndustryGrowth();
   initLorenz();
+  initWealthTier();
   initBirthMonth();
 
+  initRFImportance();
   makeForecast('chart-forecast-count',   FORECAST.count,    C.blue,   'Billionaire Count', 300,  4200, '~3,420');
   makeForecast('chart-forecast-selfmade',FORECAST.selfMade, C.green,  'Self-Made (%)',      55,   85,   '~72.1%');
   makeForecast('chart-forecast-female',  FORECAST.female,   C.red,    'Female Share (%)',   3,    22,   '~13.7%');
