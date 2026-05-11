@@ -11,7 +11,7 @@
 
 | Link | What it is |
 |---|---|
-| **[Interactive website](index.html)** | The narrative-driven story. Open `index.html` in any modern browser. |
+| **[Interactive website](https://suhani-pandey.github.io/Final-Assignment_SocialDataVisualization/)** | The narrative-driven story. Open `index.html` in any modern browser. |
 | **[Explainer notebook](Final%20assignemnt.ipynb)** | The full analysis with code, methodology, and statistical detail. |
 
 ---
@@ -168,4 +168,4 @@ Group project for **02806 — Social Data Analysis and Visualization**, DTU.
 
 ## References
 
-Full reference list with inline citations is in §7 of [`Final assignemnt.ipynb`](Final%20assignemnt.ipynb) and at the bottom of the [website](index.html). Key sources: Segel & Heer (2010), Piketty & Saez (2013), Stiglitz (2012), Kaplan & Rauh (2013), Gladwell (2008), plus the Forbes 2023 dataset and World Bank Development Indicators.
+Full reference list with inline citations is in §7 of [`Final assignemnt.ipynb`](Final%20assignemnt.ipynb) and at the bottom of the [website](https://suhani-pandey.github.io/Final-Assignment_SocialDataVisualization/). Key sources: Segel & Heer (2010), Piketty & Saez (2013), Stiglitz (2012), Kaplan & Rauh (2013), Gladwell (2008), plus the Forbes 2023 dataset and World Bank Development Indicators.
